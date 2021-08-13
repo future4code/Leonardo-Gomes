@@ -65,37 +65,45 @@
 
     //a) Escreva uma função que receba 2 números como parâmetros, e, dentro da função, faça a soma das duas entradas e retorne o resultado. Invoque a função e imprima no console o resultado.
 
-    function somaNum (n1,n2){
-        resultado = n1 + n2
-        return resultado
-    }
+//     function somaNum (n1,n2){
+//         resultado = n1 + n2
+//         return resultado
+//     }
 
-    const soma = somaNum(6,4)
-    console.log(soma)
+//     const soma = somaNum(6,4)
+//     console.log(soma)
 
-    //b) Faça uma função que recebe 2 números e retorne um booleano que informa se o primeiro número é **maior ou igual** ao segundo.
+//     //b) Faça uma função que recebe 2 números e retorne um booleano que informa se o primeiro número é **maior ou igual** ao segundo.
 
-    function ehMaior(n1,n2){
-        resultado = n1 > n2
-        return resultado
-    }
+//     function ehMaior(n1,n2){
+//         resultado = n1 > n2
+//         return resultado
+//     }
 
-    const numeros = ehMaior(7,2)
-    console.log(numeros)
-
-
-    //c) Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não
-
-    function ehPar(n1){
-        resultado = n1 % 2 === 0
-        return resultado
-    }
-
-    const pares = ehPar(20)
-    console.log(pares)
+//     const numeros = ehMaior(7,2)
+//     console.log(numeros)
 
 
-    //d) Faça uma função que recebe uma mensagem (`string`) como parâmetro e imprima o tamanho dessa mensagem, juntamente com uma versão dela em letras maiúsculas.
+//     //c) Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não
+
+//     function ehPar(n1){
+//         resultado = n1 % 2 === 0
+//         return resultado
+//     }
+
+//     const pares = ehPar(20)
+//     console.log(pares)
+
+
+//     //d) Faça uma função que recebe uma mensagem (`string`) como parâmetro
+//     // e imprima o tamanho dessa mensagem
+//     //,juntamente com uma versão dela em letras maiúsculas.
+
+//     function retornaTamanho(texto) {
+//         return `${texto.lenght}, ${texto.toUpperCase()}`
+//      }
+   
+//    console.log(retornaTamanho("Maria Eduarda faz design"))
 
 // 3 - Crie uma função para cada uma das operações básicas (soma, subtração, multiplicação e divisão). Em seguida, peça para o usuário inserir dois números e **chame** essas 4 funções com esses valores inputados pelo usuário sendo o argumento. Por fim, mostre no console o resultado das operações:
 
@@ -105,20 +113,60 @@
     // Multiplicação: 90
     // Divisão: 10
     
-function soma (numero1 , numero2){
-    const somaNumeros = numero 1 + numero2
-    return somaNumeros
+// function adicao(numero1 , numero2){
+//     return = numero1 + numero2
 
-}
+// }
 
-function subtracao (numero1 , numero2){
-    const subNumeros = numero 1 + numero2
-    return subNumeros
+// function subtracao(numero1 , numero2){
+//  return = numero1 + numero2
 
-}
+// }
 
-const numero1 = Number(prompt("Insira um número"))
-const numero2 = Number(prompt("Insira outro número"))
+// function multiplica(numero1 , numero2){
+//     return = numero1 * numero2
+   
+// }
+   
+// function divide(numero1 , numero2){
+//     return = numero1 / numero2
+   
+// }
+   
+// const numero1 = Number(prompt("Insira um número"))
+// const numero2 = Number(prompt("Insira outro número"))
 
-console.log(`Números inseridos: ${numero1} e ${numero2}`)
-console.log(`Soma: ${Soma(numero1 ,numero2)}`)
+// console.log(`Soma: ${adicao(numero1 ,numero2)}`)
+// console.log(`Diferença: ${subtracao(numero1 ,numero2)}`)
+// console.log(`Multiplicação: ${multiplica(numero1 ,numero2)}`)
+// console.log(`Divisão: ${divide(numero1 ,numero2)}`)
+
+// DESAFIOS 
+
+// 1 - a
+
+// const imprimeNoConsole = (variavel) => {
+//     console.log(variavel)
+// }
+
+// // 1 - b
+
+// const somaDoisValores = (valor1 ,valor2) => {
+//     const soma = valor1 + valor2
+//     imprimeNoConsole(soma)
+
+// }
+
+// somaDoisValores(10, 15)
+
+// 2 - 
+// a² = b² + c²
+
+// function calculaHipotenusa(b, c) {
+//     const hipotenusaQuadrado = b ** 2 + c ** 2
+//     const hipotenusa = hipotenusaQuadrado ** (1/2)
+//     return hipotenusa 
+// }
+
+// const resultadoHipotenusa = calculaHipotenusa(2, 2)
+// console.log("Hipotenusa:", resultadoHipotenusa)
