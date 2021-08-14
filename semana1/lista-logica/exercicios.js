@@ -113,19 +113,18 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
-  anoAtual = Number(prompt("Digite ano atual"))
-  anoDeNascimento = Number(prompt("Digite ano que nasceu"))
-  anoCpf = Number(prompt("Digite ano de emissão de seu CPF"))
+ const anoAtual = Number(prompt("Digite ano atual"))
+ const anoDeNascimento = Number(prompt("Digite ano que nasceu"))
+ const anoCpf = Number(prompt("Digite ano de emissão de seu CPF"))
   
-  idadeUsuario = anoAtual - anoDeNascimento
-  renovaOuNao = anoAtual - anoCpf
+ const idadeUsuario = anoAtual - anoDeNascimento
+ const renovaOuNao = anoAtual - anoCpf
 
-  caso1 = idadeUsuario >= 20  && renovaOuNao >= 5
-  caso2 = idadeUsuario > 20 || idadeUsuario <= 50 && renovaOuNao >= 10
-  caso3 = idadeUsuario <= 50 && renovaOuNao >= 15
+ const caso1 = idadeUsuario <= 20  && renovaOuNao >= 5
+ const caso2 = idadeUsuario > 20 && idadeUsuario <= 50 && renovaOuNao >= 10
+ const caso3 = idadeUsuario > 50 && renovaOuNao >= 15
 
-  cpfDeveRenovar = (caso1, caso2, caso3)
-  console.log(cpfDeveRenovar)
+ console.log(caso1 || caso2 || caso3)
 
 }
 
