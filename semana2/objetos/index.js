@@ -138,11 +138,17 @@ console.log(pessoaAdicoes);
     nome: "Maria",
     idade: 19,
     profissao: "Designer"
-}
+};
 
 const minhaFuncao1 = (pessoa1) => { 
-    return [pessoa1.nome, pessoa1.nome.length, pessoa1.idade, pessoa1.profissao, pessoa1.profissao.length]
-}
+    return [
+        pessoa1.nome, 
+        pessoa1.nome.length, 
+        pessoa1.idade, 
+        pessoa1.profissao, 
+        pessoa1.profissao.length
+    ]
+};
 
 console.log(minhaFuncao1(pessoa1))
 
@@ -150,11 +156,17 @@ const pessoa2 = {
     nome: "Gojo",
     idade: 28,
     profissao: "Professor"
-}
+};
 
 const minhaFuncao2 = (pessoa2) => { 
-    return [pessoa2.nome, pessoa2.nome.length, pessoa2.idade, pessoa2.profissao, pessoa2.profissao.length]
-}
+    return [
+        pessoa2.nome, 
+        pessoa2.nome.length, 
+        pessoa2.idade, 
+        pessoa2.profissao, 
+        pessoa2.profissao.length
+    ]
+};
 
 console.log(minhaFuncao2(pessoa2))
 
@@ -169,72 +181,80 @@ console.log(minhaFuncao2(pessoa2))
 
 // d) Imprima a variável carrinho e garanta que ela agora seja um array preenchido com três objetos. 
 
-
 const carrinho = [] 
 
 const fruta1 = {
     nome: "Maçã",
     disponibilidade: true
-}
+};
 
 const fruta2 = {
     nome: "Uva",
     disponibilidade: true
-}
+};
 
 const fruta3 = {
     nome: "Laranja",
     disponibilidade: true
+};
+
+
+const adicionaCarrinho = (sacolao) => {
+    carrinho.push(sacolao);
 }
 
+adicionaCarrinho(fruta1);
+adicionaCarrinho(fruta2);
+adicionaCarrinho(fruta3);
 
-const recebeObjeto = (fruta1, fruta2, fruta3) => {
-   const carrinho = [fruta1, fruta2, fruta3]
-    return carrinho
-}
-
-console.log(recebeObjeto(fruta1, fruta2, fruta3))
+console.log(carrinho);
 
 
 // DESAFIOS 
 // 1 - Crie um função que pergunte ao usuário seu nome, sua idade e sua profissão e depois imprima no console um objeto com essas propriedades. Depois de imprimir o novo objeto, imprima também o tipo dele para garantir que é um objeto.
 
-const infos = {
+const infoPessoa = () => {
+    const pessoa = {
     nome: prompt("Qual seu nome?"),
     idade: Number(prompt("Qual sua idade?")),
     profissao: prompt("Qual sua profissão??")
+    };
+
+    console.log(pessoa);
+    console.log(typeof pessoa);
 }
 
-console.log(`nome: ${infos.nome} idade: ${infos.idade} profissão: ${infos.profissao}.`)
-
+//infoPessoa()
 
 // 2 - Crie uma função que receba dois objetos que representam filmes. Eles devem ter as propriedades: ano de lançamento e nome. A função deve retornar uma mensagem no seguinte modelo:
 
 //O primeiro filme foi lançado antes do segundo? false
 //O primeiro filme foi lançado no mesmo ano do segundo? true
 
-const filme1 = {
-    nome: "Irmão Urso",
-    anoLancamento: 2003
+
+const validarAnoLancamento = (filme1, filme2) => {
+  return `O primeiro filme foi lançado antes do segundo? ${filme1.anoLancamento < filme2.anoLancamento}
+O primeiro filme foi lançado no mesmo ano do segundo? ${filme1.anoLancamento === filme2.anoLancamento}`;
+
 }
 
-const filme2 = {
+const elDourado = {
     nome: "El Dourado",
     anoLancamento: 2000
 }
 
-const validarAno1 = (filme1, filme2) => {
-  check1 = (filme1 <= filme2)
-  return check1
+const irmaoUrso = {
+    nome: "Irmão Urso",
+    anoLancamento: 2003
 }
 
-console.log(check1)
+console.log(validarAnoLancamento(elDourado, irmaoUrso))
 
-const validarAno2 = (filme1, filme2) => {
-    check2 = (filme1 === filme2)
-    return check2
-  }
-
-  console.log(check2)
 
  // 3 - Crie uma função a mais pro exercício 3 de escrita de código. Essa função vai auxiliar o controle de estoque do sacolão: ela deve receber por parâmetro uma das frutas e retornar esse mesmo objeto com a propriedade `disponibilidade` com o valor invertido.
+
+const inverteDisponibilidade = (fruta) => {
+    return {...fruta, disponibilidade: !fruta.disponibilidade}
+}
+
+console.log(inverteDisponibilidade(fruta1))
