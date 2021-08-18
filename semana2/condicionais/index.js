@@ -195,24 +195,79 @@ const etapaDeJogo = prompt("Qual etapa do jogo irá assistir? Digite (SF)-semi-f
 const categoria = Number(prompt("Qual é a categoria do jogo? Digite (1), (2), (3), (4)"))
 const quantidadeDeIngressos = Number(prompt("Quantos ingressos irá comprar?"))
 
-// const categoriaSFUm = 1320.00
-// const categoriaSFDois = 880.00
-// const categoriaSFTres = 550.00
-// const categoriaSFQuatro = 220.00
+let precoUnitario
 
-// const categoriaDTUm = 660.00
-// const categoriaDTDois = 440.00
-// const categoriaDTTres = 330.00
-// const categoriaDTQuatro = 170.00
+switch (etapa){
+  case "SF":
+     switch(categoria){
+  	case 1: precoUnitario = 1320
+	   brake;
+	case 2: precoUnitario = 880
+	   brake;
+	case 3: precoUnitario = 550
+           brake;
+	case 4: precoUnitario = 220
+	   brake;
+	default:
+	   brake;
+	}
+      brake;
+  case "DT":
+     switch(categoria){
+  	case 1: precoUnitario = 660
+	   brake;
+	case 2: precoUnitario = 440
+	   brake;
+	case 3: precoUnitario = 330
+           brake;
+	case 4: precoUnitario = 170
+	   brake;
+	default:
+	   brake;
+	}
+   case "FI":
+     switch(categoria){
+  	case 1: precoUnitario = 1980
+	   brake;
+	case 2: precoUnitario = 1320
+	   brake;
+	case 3: precoUnitario = 880
+           brake;
+	case 4: precoUnitario = 330
+	   brake;
+	default:
+	   brake;
+	}
+}
 
-// const categoriaFIUm = 1980.00
-// const categoriaFIDois = 1320.00
-// const categoriaFITres = 880.00
-// const categoriaFIQuatro = 330.00
+if (tipo === "IN"){
+   precoUnitario = precoUnitario * 4,1
+}
 
-// if (categoria){
-//     console.log("Categoria ST?")
-//     } else {
-//       console.log("Custa 1320.00?")
-//     }
-    
+let textoTipo
+if (tipo === "DO"){
+   textoTipo = "Doméstico"
+} else if (tipo === "IN"){
+   textoTipo = "Internacional"
+}
+
+
+let textoEtapa
+if (etapa === "SF"){
+    textoEtapa = "Semi-Final"
+} else if (etapa === "DT"){
+    textoEtapa = "Decisão de Terceiro Lugar"
+} else if (etapa === "FI"){
+    textoEtapa = "Indica Final"
+}
+
+
+console.log("---Dados da compra---")
+console.log("Nome do cliente:", nome)
+console.log("Tipo do jogo:", tipoDoJogo)
+console.log("Etapa do jogo:", etapaDoJogo)
+console.log("Categoria:", categoria)
+console.log("Quantidade de ingressos:", quantidade)
+console.log("---Valores---")
+console.log("Valores do Ingresso:", precoUnitario)
+console.log("Valor Total da Compra:", precoUnitario*quantidade);
