@@ -23,7 +23,7 @@
 // Vai ser impresso os numero > 18, todos os menores que 18 não irão aparecer impresso.
 
 //b) Se eu quisesse acessar o **índice** de cada elemento dessa lista, o `for...of...` é suficiente? Se sim, o que poderia ser usado para fazer isso?
-// Acho que não para isso usamos o For para ter acesso diretamente ao número específico e ao incremnto fixo do índice.
+// Colocando um let indice = 0 e fazendo um console.log(numero, "indice", indice)
 
 // 3. Qual seria o resultado impresso no console, se o usuário digitasse o número `4` ?
 
@@ -53,17 +53,21 @@
 
 //c) Por fim, imprima o array com os nomes dos bichinhos no console
 
-// let bichinhos = Number(prompt("Quantos bichinhos de estimação você tem?"))
-// let i = 0
+let bichinhos = Number(prompt("Quantos bichinhos de estimação você tem?"))
 
-// let arrayNomes = []
+if(bichinhos === 0) {console.log("Que pena! Você pode adotar um pet!")}
 
-// for(let i=1; i <= bichinhos; i++){
-//     const nomes = prompt("Digite o nome de seu/s pets")
-//     arrayNomes.push(nomes)
-// }
+let arrayNomes = []
 
-// console.log(`Seus bichinhos são ${arrayNomes}`)
+if(bichinhos > 0){
+    for(let i=0; i < bichinhos; i++){
+    const nomes = prompt("Digite o nome de seu/s pets")
+    arrayNomes.push(nomes)
+    }
+}
+
+console.log(`Seus bichinhos são ${arrayNomes}`)
+
 
 // // 2. Considere que você tenha acesso a um `array`  (chamado de 'array original') que é composto somente de números. Baseando-se nisso, crie uma função para cada um dos itens abaixo, realizando as operações pedidas:
 
@@ -77,39 +81,54 @@
 
 // //e) Escreva um programa que imprima no console o maior e o menor números contidos no array original
 
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let i = 0
+// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
 //A)
-console.log(`Lista do array original é ${arrayOriginal}`)  
+const imprimirArray = (arrayOriginal) =>{
+    for(let numero of arrayOriginal){
+    console.log(numero)  
+    }
+}
+
+imprimirArray(arrayOriginal)
 
 //B)
 
-for(numero of arrayOriginal){
-console.log(numero/10)
+const imprimirDivisao = (arrayOriginal) =>{
+    for(numero of arrayOriginal){
+    console.log(numero/10)
+    }
 }
 
+imprimirDivisao(arrayOriginal)
 
 //C)
 
-let arrayNumerosPares = []
-
-for(let i = 0;  i < arrayOriginal.length; i++){
-    const pares = (arrayOriginal[i] % 2 === 0)
-    arrayNumerosPares.push(pares)
+const imprimirNumerosPares = (arrayOriginal) => {
+    let arrayNumerosPares = []
+    for(let numero of arrayOriginal){
+        if(numero % 2 === 0){
+            arrayNumerosPares.push(numero)
+        }
+    }
+    console.log(arrayNumerosPares)
 }
-
-console.log(`Apenas números pares, esta é a nova array: ${arrayNumerosPares}`)
+imprimirNumerosPares(arrayOriginal)
 
 
 //D)
 
-const novaArray = ["O elemento do índex i é:"]
-for(let num = 0; i < arrayOriginal; i++) {
-    novaArray = num + i
+const imprimirString = (arrayOriginal) =>{
+    let arrayDeStrings = []
+    let i = 0
+    for(let numero of arrayOriginal){
+        arrayDeStrings.push(`O elemento de index ${i} é ${numero}`)
+        i++
+    }
+    console.log(arrayDeStrings)
 }
-console.log(novaArray)
 
+imprimirString(arrayOriginal);
 
 // E)
 
@@ -154,3 +173,29 @@ console.log(`O número maior é ${maior} e o menor é ${menor}`)
 //- Uma mensagem dizendo se o número escolhido é maior ou menor do que o número chutado: `Errou. O número escolhido é maior/menor`
 
 //c) Quando o segundo jogador acertar o número escolhido pelo primeiro jogador, deve ser impressa a mensagem: `Acertou` ; e, embaixo, `O número de tentativas foi : <quantos chutes o usuário deu>`
+
+console.log("Vamos jogar!")
+const numeroEscolhido = Number(prompt("Escolha um número"))
+// Desafio 2
+//const numeroEscolhido = Math.floor(Math.random() * 100) + 1
+//console.log(numeroEscolhido)
+
+let acertou = false
+let tentativas = 0
+
+let numeroChutado
+
+while(!acertou){
+    numeroChutado = Number(prompt("Chute um número"))
+    tentativas++
+    console.log(`O número chutado foi: ${numeroChutado}`)
+    if(numeroChutado === numeroEscolhido){
+        console.log("Acertou!")
+        console.log(`Número de tentativas foi: ${tentativas}`)
+        acertou = true
+    } else if (numeroEscolhido > numeroChutado){
+        console.log("Errrrrrrrou, é maior")
+    } else {
+        console.log("Errrrrrrrou, é menor")
+    }
+}
