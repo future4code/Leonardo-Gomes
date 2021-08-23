@@ -107,7 +107,7 @@ const podeDirigir = (idade) => {
 
 // Se o usuário digitar "V", a saída deve ser:  "Boa Tarde!"
 
-const turno = prompt("Qual período você estuda? Digite ( M )-Matutino, ( V )-Vespertino ou ( N )-Noturno").toUpperCase();
+// const turno = prompt("Qual período você estuda? Digite ( M )-Matutino, ( V )-Vespertino ou ( N )-Noturno").toUpperCase();
 
 if (turno === "M") {
     console.log("Bom dia!");
@@ -172,7 +172,7 @@ const vamosAssistir = (generoFilme, valorIngresso, ) => {
     }
 }
 
-vamosAssistir(qualGeneroFilme, quantoValorIngresso, lanchinho);
+// vamosAssistir(qualGeneroFilme, quantoValorIngresso, lanchinho);
 
 
 // 2 - Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio de futebol. Para esta compra, o usuário deve fornecer algumas informações:
@@ -188,57 +188,17 @@ vamosAssistir(qualGeneroFilme, quantoValorIngresso, lanchinho);
 // O seu sistema deve solicitar estas informações ao usuário, através do `prompt` . Além disso, ele deve imprimir tudo isso, junto com o valor de cada ingresso e o valor total que o usuário tem que pagar (ou seja, o valor unitário do ingresso multiplicado pela quantidade). Abaixo, há a tabela com os valores de cada ingresso e exemplos de execução do programa. Lembrando que o valor de jogos internacionais é o mesmo de jogos domésticos, mas seus preços devem ser multiplicados pelo valor do dólar (considerar o dólar = R$4,10)
 
 
-const nomeCompleto = prompt("Qual é seu nome completo?").toLowerCase() 
-const tipoDeJogo = prompt("Qual é o tipo de jogo? Digite (IN)-Internacional ou (DO)-Doméstico").toUpperCase()
-const etapaDeJogo = prompt("Qual etapa do jogo irá assistir? Digite (SF)-semi-final ; (DT)-decisão de terceiro lugar e (FI)-indica final").toUpperCase()
+const nome = prompt("Qual é seu nome completo?")
+const tipo = prompt("Qual é o tipo de jogo? Digite (IN)-Internacional ou (DO)-Doméstico").toUpperCase()
+const etapa = prompt("Qual etapa do jogo irá assistir? Digite (SF)-semi-final ; (DT)-decisão de terceiro lugar e (FI)-indica final").toUpperCase()
 
-const categoria = Number(prompt("Qual é a categoria do jogo? Digite (1), (2), (3), (4)"))
-const quantidadeDeIngressos = Number(prompt("Quantos ingressos irá comprar?"))
 
 let precoUnitario
 
 switch (etapa){
   case "SF":
      switch(categoria){
-  	case 1: precoUnitario = 1320
-	   brake;
-	case 2: precoUnitario = 880
-	   brake;
-	case 3: precoUnitario = 550
-           brake;
-	case 4: precoUnitario = 220
-	   brake;
-	default:
-	   brake;
-	}
-      brake;
-  case "DT":
-     switch(categoria){
-  	case 1: precoUnitario = 660
-	   brake;
-	case 2: precoUnitario = 440
-	   brake;
-	case 3: precoUnitario = 330
-           brake;
-	case 4: precoUnitario = 170
-	   brake;
-	default:
-	   brake;
-	}
-   case "FI":
-     switch(categoria){
-  	case 1: precoUnitario = 1980
-	   brake;
-	case 2: precoUnitario = 1320
-	   brake;
-	case 3: precoUnitario = 880
-           brake;
-	case 4: precoUnitario = 330
-	   brake;
-	default:
-	   brake;
-	}
-}
+
 
 if (tipo === "IN"){
    precoUnitario = precoUnitario * 4,1
@@ -264,10 +224,4 @@ if (etapa === "SF"){
 
 console.log("---Dados da compra---")
 console.log("Nome do cliente:", nome)
-console.log("Tipo do jogo:", tipoDoJogo)
-console.log("Etapa do jogo:", etapaDoJogo)
-console.log("Categoria:", categoria)
-console.log("Quantidade de ingressos:", quantidade)
-console.log("---Valores---")
-console.log("Valores do Ingresso:", precoUnitario)
-console.log("Valor Total da Compra:", precoUnitario*quantidade);
+
