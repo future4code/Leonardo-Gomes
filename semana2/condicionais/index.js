@@ -192,66 +192,13 @@ const nome = prompt("Qual é seu nome completo?")
 const tipo = prompt("Qual é o tipo de jogo? Digite (IN)-Internacional ou (DO)-Doméstico").toUpperCase()
 const etapa = prompt("Qual etapa do jogo irá assistir? Digite (SF)-semi-final ; (DT)-decisão de terceiro lugar e (FI)-indica final").toUpperCase()
 
-const categoria = Number(prompt("Qual é a categoria do jogo? Digite (1), (2), (3), (4)"))
-const quantidade = Number(prompt("Quantos ingressos irá comprar?"))
 
 let precoUnitario
 
 switch (etapa){
   case "SF":
      switch(categoria){
-  	    case 1: 
-            precoUnitario = 1320
-	        brake;
-	    case 2: 
-            precoUnitario = 880
-	        brake;
-	    case 3: 
-            precoUnitario = 550
-            brake;
-	    case 4:
-            precoUnitario = 220
-	        brake;
-	    default:
-	        brake;
-	    }
-        brake
-  case "DT":
-     switch(categoria){
-  	    case 1: 
-            precoUnitario = 660
-	        brake;
-	    case 2: 
-            precoUnitario = 440
-	        brake;
-	    case 3: 
-            precoUnitario = 330
-            brake;
-	    case 4: 
-            precoUnitario = 170
-	        brake;
-	    default:
-	        brake;
-	    }
-        brake
-   case "FI":
-     switch(categoria){
-  	    case 1: 
-            precoUnitario = 1980
-	        brake;
-	    case 2: 
-            precoUnitario = 1320
-	        brake;
-	    case 3: 
-            precoUnitario = 880
-            brake;
-	    case 4: 
-            precoUnitario = 330
-	        brake;
-	    default:
-	        brake;
-	    }
-}
+
 
 if (tipo === "IN"){
    precoUnitario = precoUnitario * 4,1
@@ -277,10 +224,4 @@ if (etapa === "SF"){
 
 console.log("---Dados da compra---")
 console.log("Nome do cliente:", nome)
-console.log("Tipo do jogo:", tipo)
-console.log("Etapa do jogo:", etapa)
-console.log("Categoria:", categoria)
-console.log("Quantidade de ingressos:", quantidade)
-console.log("---Valores---")
-console.log("Valores do Ingresso:", precoUnitario)
-console.log("Valor Total da Compra:", precoUnitario * quantidade);
+
