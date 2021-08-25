@@ -1,0 +1,50 @@
+.fundo-tela{
+    background-color: rgb(248, 189, 78);
+}
+
+.icone{
+    width: 220px;
+}
+
+.navega{ 
+    list-style-type: none;
+    text-align: center;
+    margin-top: 0;
+    padding: 0;
+}
+
+.navega li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px; 
+}
+
+.botao-estilo{
+    background-color: red;
+    color: white;
+    display: block;
+    margin-top: 10px;
+}
+
+.frase2{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.frase3{
+    color: rgb(250, 19, 60);
+    text-align: center;
+}
+
+
+.redes{
+    width: 80px;
+    margin-right: 200px;
+    margin-left: 160px;
+}
+
+h2{
+    color: black;
+    text-align: center; 
+}
