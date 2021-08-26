@@ -1,12 +1,9 @@
 ```
 function calculaPrecoTotal(quantidade) {
-  const macasCada = 1.30
-  const MacasDuzia = 1.00
-  if(macasCada > quantidade){
-    
-  } else (MacasDuzia < quantidade){
-    
-  }
-  return macasCompradas
+	 if (quantidade < 12) {
+      return quantidade * 1.3
+   } else {
+      return quantidade * 1
+   }
 }
 ```
