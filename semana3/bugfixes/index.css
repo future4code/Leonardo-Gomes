@@ -46,6 +46,7 @@ div img {
     color: white;
     display: block;
     margin: auto;
+    
 }
 
 .botao-amarelo:hover {
@@ -76,6 +77,7 @@ div img {
 
 #container-de-descricao> ol {
     padding: 15px 0px;
+    text-align: center;
     
 }
 
@@ -87,6 +89,7 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+
 }
 
 
