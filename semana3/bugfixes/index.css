@@ -74,8 +74,9 @@ div img {
     color: white;
 }
 
-#container-de-descricao>ol {
+#container-de-descricao> ol {
     padding: 15px 0px;
+    
 }
 
 #container-para-comprar {
