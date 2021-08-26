@@ -27,6 +27,7 @@ button:focus {
 
 img {
     width: 100px;
+    height: auto;
 }
 
 div>p:first-child {
@@ -54,13 +55,17 @@ div img {
     
 }
 
-.container {
+.container-button {
     height: 500px;
     text-align: center;
+    display: flex;
+
 }
 
 .icone {
-    height: 15px;
+    height: 25px;
+    width: 25px;
+    background-color: whitesmoke;
 }
 
 
@@ -73,16 +78,22 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding: 100px;
+    list-style-position: inside;
+
 }
 
 #container-de-descricao> ol {
     padding: 15px 0px;
-    text-align: center;
     
 }
 
 #container-para-comprar {
     background-color: #e7eb90;
+}
+
+a{
+    text-decoration: none;
 }
 
 #container-para-comprar>p {
@@ -113,8 +124,17 @@ td button {
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    color: black;
+    color:black;
 }
+
+td button:hover {
+    background-color: #91844e;
+}
+
+td button:active {
+    color: whitesmoke;
+}
+
 
 .container-do-search {
     margin-top: 20px;
