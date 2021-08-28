@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-barra{
+    background-color: rgb(250,233,67);
+    display: block;
+}
+
+.image-logo{
+    width: 85px;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+#formulario {
+    height:40vh;
+    text-align: center;
+    padding-top: 8vh;
+    color:black;
+}
+
+label {
+    font-size: 24px;
+}
+
+#name, #email, #comments{
+    width: 400px;
+}
+
+#comments {
+    height: 20vh;
+}
+
+#botao-enviar {
+    margin-top: 5vh;
+    height: 40px;
+    width: 80px;
+    font-size: 24px;
+    border-radius: 2px;
+} 
+
+#botao-enviar:hover {
+    background-color:lightgrey;
+    color: white;
+    cursor: pointer;
+} 
+
+
+.container-meio{
+    background-color: white;
+    display: block;
+}
+.folha{
+    width: 200px;
+    height: 100px;
+}
+
+.container-rodape{
+    background-color: rgb(250,233,67);
+    display: block;
+    padding: 50px;
+}
+
+.logo-rodape{
+    width: 180px;
+    margin-left: 515px;
+    margin-top: 20px;
+}
+
+
+.logo-git{
+    width: 110px;
+    margin-left: 300px;
+    margin-top: 1px;
+}
+
+.logo-link{
+    width: 100px;
+    margin-left: 175px;
+    margin-top: 1px;
+}
+
+.logo-insta{
+    width: 180px;
+    margin-left: 130px;
+    margin-top: 1px;
+}
