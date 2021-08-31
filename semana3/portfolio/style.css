@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-barra{
+    background-color: rgb(250,233,67);
+    display: block;
+}
+
+.image-logo{
+    width: 85px;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+.botao-ola {
+    border:rgb(255, 255, 255);
+	height: 30px;
+	border-radius: 25px;
+	color: white;
+	background-color: rgb(250,233,67);
+	width: 150px;
+	display: block;
+	margin-left: 1200px;
+}
+
+#botao-enviar:active {
+    background-color: rgb(250,233,67);
+    color: white;
+    cursor: pointer;
+} 
+
+
+.texto-inicio {
+    margin-top: 80px;
+}
+
+.titulo-um{
+    font-size: 45px;
+    color: rgb(17, 17, 15);
+    text-align: center;
+
+}
+
+.titulo-dois{
+    font-size: 22px;
+    color: rgb(68, 68, 68);
+    text-align: center;
+    
+}
+
+.avatar{
+        width: 250px;
+        margin-left: 525px;
+        margin-top: 60px;
+}
+
+.setup{
+    width: 650px;
+    height: 365px;
+    margin-left: 325px;
+    margin-top: 40px;
+}
+
+.container-abaixo{
+    background: rgb(250,233,67);
+    background: linear-gradient(360deg, #fff050 0, #fae843 50%, #f1e035 100%);
+    display: block;
+}
+
+.ola{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.sobre-mim{
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    list-style-position: inside;
+    font-weight: 200;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+
+.caixa-infos1{
+    width: 225px;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.caixa-infos2{
+    width: 225px;
+    margin-top: 20px;
+    margin-left: 180px;
+}
+.caixa-infos3{
+    width: 225px;
+    margin-top: 20px;
+    margin-left: 170px;
+}
+
+
+h1{
+    font-size: 22px;
+    color: rgb(250,233,67);
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 100px;
+
+}
+h2{
+    font-size: 22px;
+    color: rgb(250,233,67);
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+h3{
+    font-size: 22px;
+    color: rgb(250,233,67);
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 165px;
+}
+
+
+
+h4{
+    font-size: 22px;
+    color: rgb(68, 68, 68);
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 100px;
+
+}
+h5{
+    font-size: 22px;
+    color: rgb(68, 68, 68);
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+h6{
+    font-size: 22px;
+    color: rgb(68, 68, 68);
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 185px;
+}
+
+
+.container-galeria{
+    background: rgb(250,233,67);
+    background: linear-gradient(360deg, #fff050 0, #fae843 50%, #f1e035 100%);
+    display: block;
+    margin-top: 45px;
+}
+
+.galeria{
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.image-loja1{
+    width: 450px;
+    margin-left: 150px;
+    margin-top: 1px;
+    padding: 15px;
+}
+
+.image-loja2{
+    width: 450px;
+    margin-left: 150px;
+    margin-top: 1px;
+    padding: 15px;
+}
+
+
+.container-meio{
+    background-color: white;
+    display: block;
+}
+.folha{
+    width: 200px;
+    height: 100px;
+}
+
+.container-rodape{
+    background-color: rgb(250,233,67);
+    display: block;
+    padding: 50px;
+}
+
+.logo-rodape{
+    width: 180px;
+    margin-left: 515px;
+    margin-top: 20px;
+}
+
+.mensagem{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.logo-git{
+    width: 110px;
+    margin-left: 300px;
+    margin-top: 1px;
+}
+
+.logo-link{
+    width: 100px;
+    margin-left: 175px;
+    margin-top: 1px;
+}
+
+.logo-insta{
+    width: 180px;
+    margin-left: 130px;
+    margin-top: 1px;
+}
+
