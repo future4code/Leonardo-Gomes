@@ -52,7 +52,7 @@ class Post extends React.Component {
 
   onClickCurtida = () => {
     let numeroDeCurtidas
-    
+
     if(this.state.curtido){
     numeroDeCurtidas = this.state.numeroCurtidas - 1
     } else {
@@ -72,7 +72,7 @@ class Post extends React.Component {
     })
   }
 
-  // 9 - Essa parte do código faz com que o botão tenha o evento do comentário para o usuário digitar.
+  // 9 - Parte do código faz com que o botão tenha o evento do comentário para o usuário digitar.
 
   aoEnviarComentario = () => {
     this.setState({
