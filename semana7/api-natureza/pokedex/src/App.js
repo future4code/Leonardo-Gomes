@@ -9,7 +9,7 @@ import Pokemon from "./img/pokedex.png"
 const Container = styled.div `
   background-image: url(${Pokemon});
   width: 800px;
-  height: 535px;
+  height: 534px;
   margin-top: 25px;;
   margin-left: 280px;
 `
