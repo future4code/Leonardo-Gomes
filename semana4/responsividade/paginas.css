@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    justify-content:space-between;
+    align-items: center;
+    height: 90px;
+    padding: 20px;
+    grid-column: 1/ -1;
+}
+
+.container-cabecalho{
+    display: flex;
+    align-items: center;
+}
+
+h1, a{
+    color:white;
+    text-decoration: none;
+}
+
+.botao-buscar{
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 920px;
+}
+
+.foto-e-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.video-ajuste{
+    width: 50%;
+    height: 50%;
+    margin: 40px;
+}
+
+h2{
+    text-align: center;
+    padding: 10px;
+}
+
+footer{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    grid-column: 1/ -1;
+}
+
+h3{
+    color: white;
+    font-size: 20px;
+} 
+
+/* CELULAR
+
+@media screen and (max-device-width: 480px) {
+    .header{
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    main{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 30px; 
+        
+    }
+
+    .footer{
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+}  */

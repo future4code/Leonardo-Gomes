@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Vendas</title>
+    <link rel="stylesheet" type="text/css" href="page-historico-venda.css">
+</head>
+<body class="fundo-tela">
+    
+    <ul class="navega">
+        <img class="icone" src="img/funkoshop.jpg" alt="Funko Pop Logo"/>
+        <li><a href="index.html">Página Inicial</a></li>
+        <li><a href="ctrl-estoque.html">Controle de Estoque</a></li>
+        <li><a href="add-produto.html">Adicionar Produto</a></li>
+        <li><a href="funcionarios.html">Funcionários</a></li>
+        <li><a href="page-venda.html">Vendas</a></li>
+        <li><a href="page-historico-venda.html">Histórico de Vendas</a></li>
+    </ul>
+
+    <!-- Deve conter uma lista com as informações de cada venda realizada: horário;  funcionário que realizou; valor total da compra e forma de pagamento. Além disso, deve conter um campo onde consigamos filtrar por data, escrevendo-a por extenso. -->
+
+    <h2>Lista de informações</h2>
+
+    <form action="">
+        <div>
+            <label for="horario-venda">Horário de Venda: </label>
+            <input type="number" id="horario-venda" name="horario-venda">
+        </div>
+        
+        <div>
+            <label for="nome-funcionario">Funcionário que Realizou Venda: </label>
+            <input type="text" id="nome-funcionario" name="nome-funcionario">
+        </div>
+        
+        <div>
+            <label for="valor-total">Valor Total da Compra: </label>
+            <input type="number" id="valor-total" name="valor-total">
+        </div>
+
+        <div>
+            <label for="pagamento">Forma de Pagamento: </label>
+            <input type="text" id="pagamento" name="pagamento">
+        </div>
+
+        <div>
+            <label for="data">Filtrar Data de Venda: </label>
+            <input type="number" id="data" name="data">
+        </div>
+
+        <div class="form-add">
+            <button class="botao-estilo" class="botao-estilo" type="submit">Adicionar</button>
+        </div>
+
+    </form>
+
+</body>
+
+<footer>
+    <div>
+        <h2 class="frase2">A sua loja especializada em Funko Pops</h2>
+    </div>
+
+    <h3 class="frase3">Siga-nos nas redes sociais!</h3>
+
+    <div>
+        <img class="redes" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+        <img class="redes" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+        <img class="redes" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+    </div>
+
+</footer>
+
+</html>

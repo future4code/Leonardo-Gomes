@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 90px 1fr 90px;
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    justify-content:space-between;
+    align-items: center;
+    height: 90px;
+    padding: 20px;
+    grid-column: 1/ -1;
+}
+
+.container-cabecalho{
+    display: flex;
+    align-items: center;
+}
+
+h1, a{
+    color:white;
+    text-decoration: none;
+}
+
+.botao-buscar{
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 920px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+
+.foto-e-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.foto-ajuste{
+    height: 100%;
+    width: 100%;
+}
+
+#link-do-video{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+
+h2{
+    text-align: center;
+    padding: 10px;
+}
+
+footer{
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    grid-column: 1/ -1;
+}
+
+h3{
+    color: white;
+    font-size: 20px;
+}
