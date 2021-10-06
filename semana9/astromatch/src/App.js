@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Home from "./Components/Home";
-import Matches from "./Components/Matches"
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
+import Matches from "./Components/Match/Matchs"
 
 
 const Astromatch = () => {
@@ -23,6 +24,7 @@ const Astromatch = () => {
 
   return (
     <div>
+      <Header />
       {renderCurrentPage()}
 
     </div>
