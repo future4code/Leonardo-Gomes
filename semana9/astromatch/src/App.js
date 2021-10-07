@@ -1,32 +1,35 @@
 import React, {useState} from "react";
-import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
-import Matches from "./Components/Match/Matchs"
+import Match from "./Components/Match/Match";
+import {GlobalEscopo} from "./GlobalEscopo";
 
 
 const Astromatch = () => {
   const [currentPage, setCurrentPage] = useState("Home");
+
+  const pageHome = () => {
+    setCurrentPage("Home")
+  }
+  
+  const pageMatch = () => {
+    setCurrentPage("Match")
+  }
   
   const renderCurrentPage = () => {
     switch(currentPage){
       case "Home":
-        return <Home changePage={changePage} />
-      case "Matches":
-        return <Matches changePage={changePage} />
+        return <Home changePage={pageMatch} />
+      case "Match":
+        return <Match changePage={pageHome} />
       default:
         return <Home />;
     }
   };
 
-  const changePage = () => {
-    setCurrentPage();
-  };
-
   return (
     <div>
-      <Header />
+      <GlobalEscopo />
       {renderCurrentPage()}
-
     </div>
   );
 }
