@@ -1,4 +1,4 @@
-// import React, {useEffect} from "react";
+// import React, {useState, useEffect} from "react";
 // import axios from "axios";
 import {Container, Card, LogoImg, ContainerHeader, ButtonBack, CardContainer, ButtonClean} from "./styled"
 import voltar from "../img/back.png"

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// Escopo
+
 export const ContainerHome = styled.div`
     width: 400px;
     height: 600px;
@@ -12,6 +14,7 @@ export const ContainerHome = styled.div`
     background-color: white;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
 `
+// Header
 
 export const ContainerHeader = styled.div`
     display: flex;
@@ -28,23 +31,6 @@ export const LogoImg = styled.img`
     margin-left: 20px;
 `
 
-export const ButtonClean = styled.button`
-    background-color: #FE4259;
-    color: white;
-    cursor: pointer;
-    width: 150px;
-    height: 30px;
-    font-size: medium;
-    font-weight: 700;
-    border-radius: 30px;
-    margin-top: 15px;
-    margin-left: 280px;
-    :hover{
-        background-color: #ff5246;
-        background: linear-gradient(to bottom, #fd3569 5%, #f5978e 100%);
-    }
-` 
-
 export const ButtonMatch = styled.button`
     background-color: #FE4259;
     cursor: pointer;
@@ -58,6 +44,8 @@ export const ButtonMatch = styled.button`
         border-radius: 80px;
     }
 `
+
+// Cards Perfis 
 
 export const Card = styled.div`
     padding: 20px 20px 0px;
@@ -79,6 +67,9 @@ export const ImagemCard = styled.div`
     display: flex;
     box-align: center;
     align-items: center;
+    img{
+        width: 28vw;
+    }
 `
 
 export const ContainerBio =styled.div`
@@ -113,7 +104,6 @@ export const TextBio = styled.div`
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bolder;
-    font-size: 15px;
 `
 
 export const ContainerButton = styled.div`
