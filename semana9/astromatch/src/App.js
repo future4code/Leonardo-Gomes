@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Home from "./Components/Home/Home";
 import Match from "./Components/Match/Match";
-import {GlobalEscopo} from "./GlobalEscopo";
 
 
 const Astromatch = () => {
@@ -28,7 +27,6 @@ const Astromatch = () => {
 
   return (
     <div>
-      <GlobalEscopo />
       {renderCurrentPage()}
     </div>
   );

@@ -4,12 +4,11 @@ import {ContainerHome, ContainerHeader, LogoImg, Card, ImagemCard, Profile, Text
 ContainerButton, ButtonDislike, ButtonLike, ButtonMatch} from "./styled"
 import matches from "../img/fire.png"
 import logo from "../img/Lovealarm.png"
-
-const url = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person"
-
+import {BaseUrl} from "../../constants"
 
 const Home = (props) => {
     const [profile, setProfile] = useState({})
+    const [chooseProfile, setChooseProfile] = useState({})
 
     useEffect(() => {
         getProfileToChoose()
@@ -17,7 +16,7 @@ const Home = (props) => {
 
     const getProfileToChoose = () => {
         axios
-        .get(url)
+        .get(`${BaseUrl}/person`)
         .then((res) => {
             setProfile(res.data.profile)
         })
@@ -25,6 +24,26 @@ const Home = (props) => {
             alert(err)
         })
     }
+
+
+    const likeMatch = (choice) => {
+        const body = {
+            id: profile.id,
+            choice: choice
+        };
+        
+        axios
+        .post(`${BaseUrl}/choose-person`, body)
+        .then((res) => {
+            getProfileToChoose();
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
+
+
 
     const cardProfile = (
         <ImagemCard>
@@ -47,8 +66,8 @@ const Home = (props) => {
                 <Card>
                     {cardProfile}
                     <ContainerButton>
-                        <ButtonDislike>✖</ButtonDislike>
-                        <ButtonLike>❤</ButtonLike>
+                        <ButtonDislike onClick={() => likeMatch(false)}>✖</ButtonDislike>
+                        <ButtonLike onClick={() => likeMatch(true)}>❤</ButtonLike>
                     </ContainerButton>
                 </Card>
             </ContainerHome>

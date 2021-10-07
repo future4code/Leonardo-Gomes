@@ -26,11 +26,14 @@ export const Card = styled.div`
     justify-content: space-evenly;
     padding: 10px;
     border-radius: 20px;
+    margin-top: 10px;
     
     img{
+        height: 100%;
+        width: 50px;
         border-radius: 50px;
-        width: 60px;
-    }
+        
+        }
     :hover{
         background: linear-gradient(to bottom, #f5978e 5%, #fd3569 100%);
     }
@@ -47,8 +50,8 @@ export const ContainerHeader = styled.div`
 export const LogoImg = styled.img`
     width: 250px;
     height: 150px;
-    margin-right: 40px;
     margin-bottom: 10px;
+    margin-left: -10px;
 `
 export const ButtonBack = styled.button`
     background-color: white;
@@ -57,7 +60,8 @@ export const ButtonBack = styled.button`
     background-color: #FE4259;
     cursor: pointer;
     margin: 0 auto;
-    margin-left: 30px;
+    margin-left: 5px;
+    
     justify-content: space-evenly;
     img{
         width: 55px;
@@ -74,12 +78,12 @@ export const ButtonClean = styled.button`
     color: white;
     cursor: pointer;
     width: 150px;
-    height: 30px;
-    font-size: medium;
+    height: 50px;
+    font-size: small;
     font-weight: 700;
     border-radius: 30px;
-    margin-left: 120px;
-    margin-top: 50px;
+    border: 1px solid white;
+    margin-right: 10px;
     :hover{
         background-color: #ff5246;
         background: linear-gradient(to bottom, #fd3569 5%, #f5978e 100%);
