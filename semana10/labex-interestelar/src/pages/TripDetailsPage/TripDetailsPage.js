@@ -1,9 +1,30 @@
-import React from "react";
+import {useEffect} from "react";
 import { useHistory } from "react-router";
+import { useParams } from "react-router";
 import {Titulo, ContainerBotoes, Botoes} from "./styled"
+import {BaseUrl} from "../../constants/constants"
+import axios from "axios";
+
 
 const TripDetailsPage = () => {
-    const history = useHistory()
+    
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        axios.get(`${BaseUrl}/trip/:id`, {
+            headers: {
+                auth: token
+            }
+        })
+        .then((res) => {
+            console.log(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }, [])
+    
+    
+    const history = useHistory();
     
     const goBack = () => {
         history.goBack()

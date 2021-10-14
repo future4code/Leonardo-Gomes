@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerBotoes = styled.div`
+export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -15,8 +15,12 @@ export const ContainerLista = styled.div`
     margin-top: -60px;
 `
 
+
+export const ContainerLogin = styled.div`
+	position:relative;
+`
+
 export const Titulo = styled.h1` 
-		font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align: start;
 		font-weight: 600;
 		letter-spacing: -0.03em;
@@ -38,8 +42,6 @@ export const Botoes = styled.button`
 	font-weight: bold;
 	padding: 8px 24px;
 	text-decoration: none;
-	font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 `
 
 export const LoginBotao = styled.button`
@@ -60,10 +62,5 @@ export const LoginBotao = styled.button`
     top:50%;
     left:50%;                             
     margin: -30px 0 0 -44px;   
-	font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-`
-
-export const ContainerLogin = styled.div`
-	position:relative;
 `
