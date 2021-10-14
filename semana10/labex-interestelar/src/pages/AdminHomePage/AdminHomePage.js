@@ -33,10 +33,10 @@ const AdminHomePage = () => {
                 <Botoes onClick={goToLoginPage}>Logout</Botoes>
             </ContainerBotoes>
 
-            <div>
+            <ContainerBotoes>
                 <Botoes onClick={goToTripDetailsPage}>Viagem</Botoes>
-                <button>Excluir</button>
-            </div>
+                <Botoes>Excluir</Botoes>
+            </ContainerBotoes>
         </div>
         
     );

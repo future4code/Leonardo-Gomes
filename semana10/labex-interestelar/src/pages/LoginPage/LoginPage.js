@@ -14,12 +14,12 @@ const LoginPage = () => {
         history.push("/admin/trips/list")
     }
 
-
     return (
         <div>
             <Titulo>Login</Titulo>
-            <input>E-mail</input>
-            <input>Senha</input>
+            <input type="text" />
+            <input type="text" />
+            
             
             <ContainerBotoes>
                 <Botoes onClick={goBack}>Voltar</Botoes>

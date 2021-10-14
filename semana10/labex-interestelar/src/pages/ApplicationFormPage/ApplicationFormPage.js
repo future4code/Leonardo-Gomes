@@ -15,10 +15,10 @@ const ApplicationFormPage = () => {
             <Titulo>Inscreva-se para uma Viagem</Titulo>
             
             <select>Escolha uma Viagem</select>
-            <input>Nome</input>
-            <select>Idade</select>
-            <input>Texto de Candidatura</input>
-            <input>Profissão</input>
+            <input type="text" placeholder="Nome" />
+            <select placeholder="Idade" />
+            <input type="text" placeholder="Descrição" />
+            <input type="text" placeholder="Profissão" />
             <select>Escolha um País</select>
         
             <ContainerBotoes>
