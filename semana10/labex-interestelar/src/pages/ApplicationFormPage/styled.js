@@ -60,10 +60,10 @@ export const Titulo = styled.h1`
 ` 
 
 export const ContainerBotoes = styled.div`
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 35px;
     margin-top: 40px;
-    align-items: center;
-    justify-content: space-evenly;
 `
 
 export const Botoes = styled.button`
@@ -78,6 +78,11 @@ export const Botoes = styled.button`
 	font-weight: bold;
 	padding: 8px 24px;
 	text-decoration: none;
+
+    :hover {
+        border-color: #D4F113; 
+        color: #D4F113;
+    }
     
 
 `

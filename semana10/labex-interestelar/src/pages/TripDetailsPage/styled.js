@@ -23,8 +23,21 @@ export const Botoes = styled.button`
 	
     color: #ffffff;
 	font-family: Arial;
-	font-size: 28px;
+	font-size: 18px;
 	font-weight: bold;
 	padding: 8px 24px;
 	text-decoration: none;
+`
+
+export const ContainerDetalhes = styled.div`
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 70px;
+    color: white;
+    background-color: #021221;
+    width: 500px;
+    height: 150px;
+    border-radius: 50px;
 `

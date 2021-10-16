@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 export const ContainerBotoes = styled.div`
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 100px;
+    
     align-items: center;
-    justify-content: space-evenly;
-    margin-top: 100px;
+    justify-content: center;
+    margin-top: 80px;
+`
+
+export const ImageLogin = styled.img`
+    width: 70px ;
+    height: 70px;
 `
 
 export const ContainerLogin = styled.div`
@@ -12,7 +20,7 @@ export const ContainerLogin = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 20px;
 
     input {
         margin-top: 20px;
@@ -31,8 +39,8 @@ export const Titulo = styled.h1`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
-` 
+    margin-top: 100px;
+`
 
 export const Botoes = styled.button`
 	background-color: transparent;
@@ -46,4 +54,9 @@ export const Botoes = styled.button`
 	font-weight: bold;
 	padding: 8px 24px;
 	text-decoration: none;
+
+    :hover {
+        border-color: #D4F113;
+        color: #D4F113;
+    }
 `

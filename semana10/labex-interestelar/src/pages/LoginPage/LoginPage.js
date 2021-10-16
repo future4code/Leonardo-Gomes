@@ -1,76 +1,85 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router";
-import {Titulo, ContainerLogin, ContainerBotoes, Botoes} from "./styled"
+import {Titulo, ContainerLogin, ContainerBotoes, ImageLogin, Botoes} from "./styled"
 import axios from "axios";
 import {BaseUrl} from "../../constants/constants"
+import useForm from "../../hooks/useForm";
+import login from "../../img/login.png"
 
 const LoginPage = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
 
-    const onChangeEmail = (event) => {
-        setEmail(event.target.value);
-    }
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+
+        if (token !== null) {
+            history.push("/admin/trips/list")
+        }
+    }, []);
+
+    const {form, onChange} = useForm({email: "", password: ""})
     
-    const onChangePassword = (event) => {
-        setPassword(event.target.value);
-    }
-    
-    const onSubmitLogin = (event) => {
-        console.log(email, password);
-        const body = {
-            email: email,
-            password: password
-        };
+
+    const goPageAdmin = (event) => {
+        event.preventDefault()
+        console.log(form)
 
         axios
-            .post(`${BaseUrl}/login` , body)
+            .post(`${BaseUrl}/login`, form)
             .then((res) => {
-                console.log(res.data.token)
+                console.log("Deu certo:", res.data)
+                history.push("/admin/trips/list");
                 localStorage.setItem("token", res.data.token)
-                history.push("/");
             })
             .catch((err) => {
-                console.log(err.res)
+                alert(err.response.data.message)
+                console.log("Deu erro:", err.response.data.message)
             })
     }
-    
     
     
     const history = useHistory()
 
-    const goBack = () => {
-        history.goBack()
-    }
-
-    const goAdminHomePage = () => {
-        history.push("/admin/trips/list")
+    const goHomePage = () => {
+        history.push("/")
     }
 
     return (
         <div>
-            <Titulo>Login</Titulo>
+            <Titulo><ImageLogin src={login} alt="imagem login" /></Titulo>
             
-            <ContainerLogin>
-                <input
-                type="email" 
-                placeholder="E-mail" 
-                value={email} 
-                onChange={onChangeEmail}
-                />
-                
-                <input
-                type="password" 
-                placeholder="Senha"
-                value={password}
-                onChange={onChangePassword} 
-                />
-            </ContainerLogin>
+            <form onSubmit={goPageAdmin}>
+                <ContainerLogin>
+                    <input
+                    name="email"
+                    type="email" 
+                    placeholder="E-mail" 
+                    value={form.email} 
+                    onChange={onChange}
+                    required
+                    title={"Digite seu e-mail"}
+                    pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"}
+                    />
+                    
+                    <input
+                    name="password"
+                    type="password" 
+                    placeholder="Senha"
+                    value={form.password}
+                    onChange={onChange} 
+                    required
+                    pattern={"^.{6,}"}
+                    title={"Sua senha deve ter no mínimo 6 caracteres"}
+                    />
+
+                </ContainerLogin>
+            
             
             <ContainerBotoes>
-                <Botoes onClick={goBack}>Voltar</Botoes>
-                <Botoes onClick={goAdminHomePage} onSubmit={onSubmitLogin}>Entrar</Botoes>
+                <Botoes onClick={goHomePage}>Voltar</Botoes>
+                <Botoes>Login</Botoes>
             </ContainerBotoes>
+            
+            </form>
         </div>
         
     );
