@@ -1,7 +1,9 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
-import {Container, Foto, ContainerCriar, ContainerUsuario, Post, PostUsuario, ContainerPost, Comentarios, ContainerBotao, BotaoPost, BotaoVoltar } from "./styled";
-
+import { Foto, ContainerCriar, ContainerUsuario, PostUsuario, ContainerPost, Comentarios, ComentarioBotao, ContainerBotao, BotaoVoltar } from "./styled";
+import like from "../../img/like.png"
+import dislike from "../../img/dislike.png"
+import comments from "../../img/comments.png"
 
 const PostPage = () => {
 
@@ -24,8 +26,9 @@ const PostPage = () => {
                 <PostUsuario type="text" placeholder="Postagem"></PostUsuario>
 
                 <ContainerCriar>
-                    <Foto> Likes </Foto>
-                    <Comentarios> Comentarios </Comentarios>
+                    <ComentarioBotao> <img src={like} alt="like" /> </ComentarioBotao>
+                    <ComentarioBotao> <img src={dislike} alt="dislike" /> </ComentarioBotao>
+                    <ComentarioBotao onClick={PostPage}> <img src={comments} alt="like" /> </ComentarioBotao>
                 </ContainerCriar>
             
             </ContainerPost>

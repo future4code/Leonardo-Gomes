@@ -116,6 +116,19 @@ export const Comentarios = styled.button`
     margin-left: 30px;
 `
 
+export const ComentarioBotao = styled.button`
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 30px;
+
+    :hover {
+        background-color: grey;
+        border-radius: 30px;
+    }
+`
+
 export const BotaoVoltar = styled.button`
     background-color: white;
     width: 200px;

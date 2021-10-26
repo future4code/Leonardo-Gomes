@@ -62,7 +62,7 @@ export const ContainerCriar = styled.div`
 export const ContainerUsuario = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20px;
 
 `
@@ -101,19 +101,17 @@ export const BotaoPost = styled.button`
     margin-left: 30px;
 `
 
-export const Comentarios = styled.button`
-    background-color: #DE2681;
-    width: 200px;
-    height: 35px;
-    border: none;
-    border-radius: 50px;
+export const ComentarioBotao = styled.button`
     cursor: pointer;
-    color: white;
-
+    background: none;
+    border: none;
     margin-bottom: 30px;
-    font-size: large;
-    font-weight: 600;
     margin-left: 30px;
+
+    :hover {
+        background-color: grey;
+        border-radius: 30px;
+    }
 `
 
 export const BotaoVoltar = styled.button`

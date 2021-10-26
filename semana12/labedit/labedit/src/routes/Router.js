@@ -16,7 +16,7 @@ const Router = () => {
                     <LoginPage />
                 </Route>
 
-                <Route exact path={"/register"}>
+                <Route exact path={"/cadastro"}>
                     <RegisterPage />
                 </Route>
 
@@ -24,7 +24,7 @@ const Router = () => {
                     <FeedPage />
                 </Route>
 
-                <Route exact path={"/post"}>
+                <Route exact path={"/post/:id"}>
                     <PostPage />
                 </Route>
 

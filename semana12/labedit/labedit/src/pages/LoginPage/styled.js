@@ -8,7 +8,6 @@ export const Container = styled.div`
     background-color: white;
 
     margin: 0 auto;
-    margin-top: 50px;
     border-radius: 30px;
     box-shadow: 7px 8px 3px 5px #DE2681;
 
@@ -19,6 +18,15 @@ export const Container = styled.div`
 
 export const Titulo = styled.h1`
     color: #DE2681;
+    
+`
+
+export const Logo = styled.h1`
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-right: 150px;
     
 `
 
@@ -70,6 +78,11 @@ export const BotaoEntrar = styled.button`
     margin-bottom: 30px;
     font-size: large;
     font-weight: 600;
+
+    :hover{
+        background: black;
+        border-radius: 30px;
+    }
 `
 
 export const BotaoCadastrar = styled.button`
@@ -82,4 +95,11 @@ export const BotaoCadastrar = styled.button`
     color: #DE2681;
     font-size: large;
     font-weight: 600;
+
+    :hover{
+        background: black;
+        color: white;
+        border-radius: 30px;
+        border: none;
+    }
 `
