@@ -1,27 +1,41 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
-import { Logo, Container, Titulo, ContainerInput,  BotaoCadastrar, Input1, Input2, Input3} from "./styled";
+import { Container, Titulo, ContainerInput, ContainerBotao,  BotaoCadastrar, Input1, Input2, Input3} from "./styled";
 import { LoginPage } from "../../routes/coordinator";
 import useForm from "../../hooks/useForm"
 import {BASE_URL} from "../../constants/url"
 import axios from "axios";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage"
 
 
 const RegisterPage = () => {
+    
     const history = useHistory()
+    const {form, onChange, clear} = useForm({username: "", email: "", password: ""});
 
-    const [form, onChange, clear] = useForm({username: "", email: "", password: ""});
-
-
-    const onSubmitForm = () => {
-
+    const onSubmitForm = (event) => {
+        event.preventDefault()
+        register(form)
     }
+
+    const register = () => {
+        axios
+        .post(`${BASE_URL}/users/signup`, form)
+        .then((res) => {
+            localStorage.setItem("token", res.data.token)
+            LoginPage(history)
+            clear()
+        })
+        .catch((err) => {
+            alert("Erro no Cadastro", err.response.data.message)
+        })
+    }
+
 
     return(
         <div>
-            <Logo>VERBUM</Logo>
             <Container>
-                <Titulo>Cadastre - se</Titulo>
+                <Titulo>Cadastre-se</Titulo>
                 
                 <ContainerInput>
                     <form onSubmit={onSubmitForm}>
@@ -29,7 +43,7 @@ const RegisterPage = () => {
                         name={"username"}
                         value={form.username}
                         onChange={onChange} 
-                        label={"Nome de Usuário"}
+                        placeholder={"Nome de Usuário"}
                         required
                         type={"username"}
                     />
@@ -37,7 +51,7 @@ const RegisterPage = () => {
                         name={"email"}
                         value={form.email}
                         onChange={onChange} 
-                        label={"E-mail"}
+                        placeholder={"E-mail"}
                         required
                         type={"email"}
                     />
@@ -45,12 +59,14 @@ const RegisterPage = () => {
                         name={"password"}
                         value={form.password}
                         onChange={onChange} 
-                        placeholder="Senha"
+                        placeholder={"Senha"}
                         required
                         type={"password"} 
                     />
                     
-                    <BotaoCadastrar onClick={() => LoginPage(history)}> Cadastrar </BotaoCadastrar>
+                    <ContainerBotao>
+                        <BotaoCadastrar type={"submit"}> Cadastrar </BotaoCadastrar>
+                    </ContainerBotao>
                     </form>
                 </ContainerInput>
                 

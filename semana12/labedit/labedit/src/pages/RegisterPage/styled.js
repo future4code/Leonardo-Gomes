@@ -21,22 +21,12 @@ export const Titulo = styled.h1`
     
 `
 
-export const Logo = styled.h1`
-    color: white;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 30px;
-    margin-right: 150px;
-    
-`
-
 export const ContainerInput = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
     margin-top: 50px;
 
-    width: 300px;
 `
 
 export const Input1 = styled.input`
@@ -47,6 +37,7 @@ export const Input1 = styled.input`
     height: 30px;
     border-radius: 10px;
     border-color: #DE2681;
+    width: 300px;
 `
     
 export const Input2 = styled.input`
@@ -57,6 +48,7 @@ export const Input2 = styled.input`
     height: 30px;
     border-radius: 10px;
     border-color: #DE2681;
+    width: 300px;
 
 `
 
@@ -68,7 +60,14 @@ export const Input3 = styled.input`
     height: 30px;
     border-radius: 10px;
     border-color: #DE2681;
+    width: 300px;
 
+`
+
+export const ContainerBotao = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const BotaoCadastrar = styled.button`

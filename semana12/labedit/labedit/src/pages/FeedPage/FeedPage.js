@@ -5,9 +5,10 @@ import like from "../../img/like.png"
 import dislike from "../../img/dislike.png"
 import comments from "../../img/comments.png"
 import {LoginPage, PostPage} from "../../routes/coordinator"
-
+import useProtectedPage from "../../hooks/useProtoctedPage"
 
 const FeedPage = () => {
+    useProtectedPage()
 
     const history = useHistory()
 

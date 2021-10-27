@@ -32,10 +32,9 @@ export const Titulo = styled.h1`
 export const ContainerInput = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
     margin-top: 50px;
 
-    width: 300px;
 `
 
 export const Input1 = styled.input`
@@ -46,6 +45,7 @@ export const Input1 = styled.input`
     height: 30px;
     border-radius: 10px;
     border-color: #DE2681;
+    width: 300px;
 `
     
 export const Input2 = styled.input`
@@ -55,14 +55,14 @@ export const Input2 = styled.input`
     height: 30px;
     border-radius: 10px;
     border-color: #DE2681;
+    width: 300px;
 
 `
 
 export const ContainerBotao = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
-
+    align-items: center;
 `
 
 export const BotaoEntrar = styled.button`
@@ -74,6 +74,7 @@ export const BotaoEntrar = styled.button`
     cursor: pointer;
     color: white;
 
+    margin-top: 50px;
     margin-bottom: 30px;
     font-size: large;
     font-weight: 600;

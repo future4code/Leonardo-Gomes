@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react"
 import { useHistory } from "react-router"
-import { LoginPage } from "../routes/coordinator"
+import { FeedPage } from "../routes/coordinator"
 
 
 const useProtectedPage = () => {
@@ -9,11 +9,11 @@ const useProtectedPage = () => {
 
     useLayoutEffect(() => {
         const token = localStorage.getItem("token")
-        if (!token) {
-            LoginPage(history)
+        if (token) {
+            FeedPage(history)
         }
     }, [history])
 
 }
 
-export default useProtectedPage; 
+export default useProtectedPage;

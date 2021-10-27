@@ -6,9 +6,9 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;    
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    body{
+        font-family: Graphik-Medium, Graphik-Regular, "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;    }
+    
+        body{
         background-image: url(${background});
         background-repeat: no-repeat;
         background-size: cover;

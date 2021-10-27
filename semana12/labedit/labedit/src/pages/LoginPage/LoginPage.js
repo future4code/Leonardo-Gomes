@@ -1,25 +1,38 @@
 import React, {useEffect} from "react";
-import { Logo, Container, Titulo, ContainerInput, ContainerBotao, BotaoEntrar, BotaoCadastrar, Input1, Input2 } from "./styled";
+import { Container, Titulo, ContainerInput, ContainerBotao, BotaoEntrar, BotaoCadastrar, Input1, Input2 } from "./styled";
 import { useHistory } from "react-router-dom";
 import {RegisterPage, FeedPage} from "../../routes/coordinator"
 import useForm from "../../hooks/useForm";
 import {BASE_URL} from "../../constants/url"
 import axios from "axios";
-
+import useUnprotectedPage from "../../hooks/useUnprotectedPage"
 
 const LoginPage = () => {
+    
     const history = useHistory()
-    const [form, onChange, clear] = useForm({email:"" , password:""});
-
+    const {form, onChange, clear} = useForm({email:"" , password:""});
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        console.log(form)
+        login(form)
     }
+    
+    const login = () => {
+        axios
+        .post(`${BASE_URL}/users/login`, form)
+        .then((res) => {
+            localStorage.setItem("token", res.data.token)
+            FeedPage(history)
+            clear()
+        })
+        .catch((err) => {
+            alert("Usuário não cadastrado", err.response.data.message)
+        })
+    }
+
 
     return(
         <div>
-            <Logo>VERBUM</Logo>
             <Container>
                 <Titulo>Solte o Verbo e Poste</Titulo>
                 
@@ -29,21 +42,25 @@ const LoginPage = () => {
                             name={"email"}
                             value={form.email}
                             onChange={onChange}
-                            label={"E-mail"}
+                            placeholder={"E-mail"}
                             required
                             type={"email"}
+                            title={"Digite seu e-mail"}
                         />
 
                         <Input2 
                             name={"password"}
                             value={form.password}
                             onChange={onChange} 
-                            placeholder="Senha"
+                            placeholder={"Senha"}
                             required
                             type={"password"}
+                            title={"Digite sua senha"}
                         />
 
-                        <BotaoEntrar type={"submit"} onClick={() => FeedPage(history)}> Entrar </BotaoEntrar>
+                        <ContainerBotao>
+                            <BotaoEntrar type={"submit"}> Entrar </BotaoEntrar>
+                        </ContainerBotao>
                     </form>
                 </ContainerInput>
                     
