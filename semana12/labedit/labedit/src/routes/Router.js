@@ -5,6 +5,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
 import PostPage from "../pages/PostPage/PostPage"
+import ErrorPage from "../pages/ErrorPage/ErrorPage"
 
 
 const Router = () => {
@@ -16,7 +17,7 @@ const Router = () => {
                     <LoginPage />
                 </Route>
 
-                <Route exact path={"/cadastro"}>
+                <Route exact path={"/register"}>
                     <RegisterPage />
                 </Route>
 
@@ -29,7 +30,7 @@ const Router = () => {
                 </Route>
 
 		        <Route>
-                    <div> Erro - Página não encontrada </div>
+                    < ErrorPage />
                 </Route>
 
             </Switch>

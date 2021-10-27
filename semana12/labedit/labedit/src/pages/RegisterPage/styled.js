@@ -45,7 +45,7 @@ export const Input1 = styled.input`
     margin-bottom: 30px;
 
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #DE2681;
 `
     
@@ -55,7 +55,7 @@ export const Input2 = styled.input`
     margin-bottom: 30px;
 
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #DE2681;
 
 `
@@ -66,7 +66,7 @@ export const Input3 = styled.input`
     margin-bottom: 50px;
 
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #DE2681;
 
 `

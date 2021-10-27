@@ -4,19 +4,12 @@ import {Container, Foto, ContainerCriar, ContainerUsuario, Post, PostUsuario, Co
 import like from "../../img/like.png"
 import dislike from "../../img/dislike.png"
 import comments from "../../img/comments.png"
+import {LoginPage, PostPage} from "../../routes/coordinator"
 
 
 const FeedPage = () => {
 
     const history = useHistory()
-
-    const PostPage = () => {
-        history.push("/post/:id")
-    }; 
-    
-    const HomePage = () => {
-        history.push("/")
-    }; 
 
     return(
         <div>
@@ -25,7 +18,7 @@ const FeedPage = () => {
                 <ContainerCriar>
                     <img src={like} alt="like" />
                     <Post type="text" placeholder="Postagem"></Post>
-                    <BotaoPost onClick={PostPage}> Post </BotaoPost>
+                    <BotaoPost onClick={() => PostPage(history)}> Post </BotaoPost>
                 </ContainerCriar>
             </Container>
 
@@ -40,13 +33,13 @@ const FeedPage = () => {
                 <ContainerCriar>
                     <ComentarioBotao> <img src={like} alt="like" /> </ComentarioBotao>
                     <ComentarioBotao> <img src={dislike} alt="dislike" /> </ComentarioBotao>
-                    <ComentarioBotao onClick={PostPage}> <img src={comments} alt="like" /> </ComentarioBotao>
+                    <ComentarioBotao onClick={() => PostPage(history)}> <img src={comments} alt="like" /> </ComentarioBotao>
                 </ContainerCriar>
             
             </ContainerPost>
                 
             <ContainerBotao>
-                <BotaoVoltar onClick={HomePage}> Voltar </BotaoVoltar>
+                <BotaoVoltar onClick={() => LoginPage(history)}> Voltar </BotaoVoltar>
             </ContainerBotao>
         
         </div>

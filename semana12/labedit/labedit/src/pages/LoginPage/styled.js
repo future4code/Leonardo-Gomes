@@ -16,11 +16,6 @@ export const Container = styled.div`
 
 `
 
-export const Titulo = styled.h1`
-    color: #DE2681;
-    
-`
-
 export const Logo = styled.h1`
     color: white;
     display: flex;
@@ -28,6 +23,10 @@ export const Logo = styled.h1`
     margin-top: 30px;
     margin-right: 150px;
     
+`
+
+export const Titulo = styled.h1`
+    color: #DE2681;
 `
 
 export const ContainerInput = styled.div`
@@ -45,7 +44,7 @@ export const Input1 = styled.input`
     margin-bottom: 30px;
 
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #DE2681;
 `
     
@@ -54,7 +53,7 @@ export const Input2 = styled.input`
     flex-direction: column;
 
     height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: #DE2681;
 
 `

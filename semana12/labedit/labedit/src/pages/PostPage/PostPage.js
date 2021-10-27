@@ -4,15 +4,12 @@ import { Foto, ContainerCriar, ContainerUsuario, PostUsuario, ContainerPost, Com
 import like from "../../img/like.png"
 import dislike from "../../img/dislike.png"
 import comments from "../../img/comments.png"
+import { LoginPage, FeedPage } from "../../routes/coordinator";
+
 
 const PostPage = () => {
 
     const history = useHistory()
-
-    const LoginPage = () => {
-        history.push("/")
-    };
-
 
     return(
         <div>
@@ -28,13 +25,13 @@ const PostPage = () => {
                 <ContainerCriar>
                     <ComentarioBotao> <img src={like} alt="like" /> </ComentarioBotao>
                     <ComentarioBotao> <img src={dislike} alt="dislike" /> </ComentarioBotao>
-                    <ComentarioBotao onClick={PostPage}> <img src={comments} alt="like" /> </ComentarioBotao>
+                    <ComentarioBotao onClick={() => FeedPage(history)}> <img src={comments} alt="like" /> </ComentarioBotao>
                 </ContainerCriar>
             
             </ContainerPost>
                 
             <ContainerBotao>
-                <BotaoVoltar onClick={LoginPage}> Voltar </BotaoVoltar>
+                <BotaoVoltar onClick={() => LoginPage(history)}> Voltar </BotaoVoltar>
             </ContainerBotao>
 
         </div>
