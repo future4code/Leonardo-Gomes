@@ -6,24 +6,50 @@ import dislike from "../../img/dislike.png"
 import comments from "../../img/comments.png"
 import {LoginPage, PostPage} from "../../routes/coordinator"
 import useProtectedPage from "../../hooks/useProtoctedPage"
+import useRequestData from "../../hooks/useRequestData"
+import {BASE_URL} from "../../constants/url"
 
-const FeedPage = () => {
+
+const FeedPage = (props) => {
     useProtectedPage()
-
+    const posts = useRequestData([], `${BASE_URL}/posts`)
     const history = useHistory()
+
+    const onClickCard = (id) => {
+        PostPage(history, id)
+    };
+
+    const postCards = posts.map((post) => {
+        return(
+            <ContainerPost
+                key={post.id}
+                body={post.body}
+                title={post.title}
+                createdAt={post.createdAt}
+                userId={post.userId}
+                voteSum={null}
+                commentCount={null}
+                userVote={null}
+                onClick={onClickCard}
+            />
+        )
+    })
 
     return(
         <div>
         
             <Container>
                 <ContainerCriar>
-                    <img src={like} alt="like" />
-                    <Post type="text" placeholder="Postagem"></Post>
+                    <Foto src={like} alt="like" />
+                    <Post>Postagem</Post>
                     <BotaoPost onClick={() => PostPage(history)}> Post </BotaoPost>
                 </ContainerCriar>
             </Container>
 
+            {postCards}
+
             <ContainerPost>
+                
                 <ContainerUsuario>
                     <img src={like} alt="like"/>
                     <h2>Usuario</h2>
@@ -38,7 +64,8 @@ const FeedPage = () => {
                 </ContainerCriar>
             
             </ContainerPost>
-                
+
+
             <ContainerBotao>
                 <BotaoVoltar onClick={() => LoginPage(history)}> Voltar </BotaoVoltar>
             </ContainerBotao>

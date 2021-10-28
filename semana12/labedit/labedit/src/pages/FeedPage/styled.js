@@ -17,44 +17,46 @@ export const Container = styled.div`
 
 `
 
-export const Foto = styled.h1`
-    color: #DE2681;
+export const Foto = styled.img`
+    width: 6vw;
+    height: 12vh;
     
 `
 
-export const Post = styled.input`
+export const Post = styled.div`
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
 
+    color: black;
     width: 300px;
     height: 50px;
-    border-radius: 20px;
-    border-color: #DE2681;
+    border: 1px solid #DE2681;
     margin-left: 30px;
+`
+
+
+export const ContainerCriar = styled.div`
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+
+
 `
 
 export const ContainerPost = styled.div`
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 250px;
+    height: 450px;
     background-color: white;
 
-    margin: 0 auto;
+    margin: 30px;
     margin-top: 30px;
     border-radius: 30px;
     box-shadow: 7px 8px 3px 5px #DE2681;
 
     align-items: center;
-    justify-content: space-around;
-
-`
-
-export const ContainerCriar = styled.div`
-    display: flex;
-    margin-top: 20px;
-    width: 500px;
     justify-content: space-around;
 
 `
@@ -95,7 +97,7 @@ export const BotaoPost = styled.button`
     cursor: pointer;
     color: white;
 
-    margin-bottom: 30px;
+    margin-top: 10px;
     font-size: large;
     font-weight: 600;
     margin-left: 30px;
