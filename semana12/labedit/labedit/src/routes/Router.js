@@ -1,41 +1,37 @@
 import React from "react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
 import PostPage from "../pages/PostPage/PostPage"
 import ErrorPage from "../pages/ErrorPage/ErrorPage"
-import Header from "../components/Header"
 
-const Router = () => {
+const Router = ({setBotaoText}) => {
     return (
-        <BrowserRouter>
-        <Header/>
-            <Switch>
+        <Switch>
 
-                <Route exact path={"/"}>
-                    <LoginPage />
-                </Route>
+            <Route exact path={"/"}>
+                <LoginPage setBotaoText={setBotaoText}/>
+            </Route>
 
-                <Route exact path={"/register"}>
-                    <RegisterPage />
-                </Route>
+            <Route exact path={"/register"}>
+                <RegisterPage setBotaoText={setBotaoText}/>
+            </Route>
 
-                <Route exact path={"/feed"}>
-                    <FeedPage />
-                </Route>
+            <Route exact path={"/feed"}>
+                <FeedPage />
+            </Route>
 
-                <Route exact path={"/post/:id"}>
-                    <PostPage />
-                </Route>
+            <Route exact path={"/post/:id"}>
+                <PostPage />
+            </Route>
 
-		        <Route>
-                    < ErrorPage />
-                </Route>
+            <Route>
+                < ErrorPage />
+            </Route>
 
-            </Switch>
-        </BrowserRouter>
+        </Switch>
     );
 };
 

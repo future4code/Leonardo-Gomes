@@ -13,11 +13,11 @@ export const Container = styled.div`
 
     align-items: center;
     justify-content: center;
-
 `
 
 export const Titulo = styled.h1`
     color: #DE2681;
+    margin-top: 15px;
     
 `
 
@@ -38,8 +38,9 @@ export const Input1 = styled.input`
     border-radius: 10px;
     border-color: #DE2681;
     width: 300px;
+    padding-left: 1.5vw;
 `
-    
+
 export const Input2 = styled.input`
     display: flex;
     flex-direction: column;
@@ -49,7 +50,7 @@ export const Input2 = styled.input`
     border-radius: 10px;
     border-color: #DE2681;
     width: 300px;
-
+    padding-left: 1.5vw;
 `
 
 export const Input3 = styled.input`
@@ -61,7 +62,7 @@ export const Input3 = styled.input`
     border-radius: 10px;
     border-color: #DE2681;
     width: 300px;
-
+    padding-left: 1.5vw;
 `
 
 export const ContainerBotao = styled.div`

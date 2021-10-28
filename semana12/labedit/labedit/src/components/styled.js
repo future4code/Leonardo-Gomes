@@ -23,6 +23,7 @@ export const Text = styled.h2`
 
 `
 
+
 export const Logout = styled.img`
     display: flex;
     justify-content: flex-end;

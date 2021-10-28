@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Titulo, ContainerInput, ContainerBotao, BotaoEntrar, BotaoCadastrar, Input1, Input2 } from "./styled";
 import { useHistory } from "react-router-dom";
 import {RegisterPage, FeedPage} from "../../routes/coordinator"
@@ -7,14 +7,14 @@ import {BASE_URL} from "../../constants/url"
 import axios from "axios";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage"
 
-const LoginPage = () => {
-    
+const LoginPage = ({setBotaoText}) => {
+    useUnprotectedPage()
     const history = useHistory()
     const {form, onChange, clear} = useForm({email:"" , password:""});
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        login(form)
+        login(form, setBotaoText)
     }
     
     const login = () => {
@@ -23,13 +23,13 @@ const LoginPage = () => {
         .then((res) => {
             localStorage.setItem("token", res.data.token)
             FeedPage(history)
-            clear()
+            setBotaoText("Logout")
         })
         .catch((err) => {
-            alert("Usuário não cadastrado", err.response.data.message)
+            alert(err.response.data.message)
         })
     }
-
+    
 
     return(
         <div>
@@ -37,7 +37,7 @@ const LoginPage = () => {
                 <Titulo>Solte o Verbo e Poste</Titulo>
                 
                 <ContainerInput>
-                    <form onSubmit={onSubmitForm}>
+                    <form onSubmit={onSubmitForm} setBotaoText={setBotaoText}>
                         <Input1 
                             name={"email"}
                             value={form.email}

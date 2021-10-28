@@ -1,21 +1,21 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
 import { Container, Titulo, ContainerInput, ContainerBotao,  BotaoCadastrar, Input1, Input2, Input3} from "./styled";
-import { LoginPage } from "../../routes/coordinator";
+import { FeedPage } from "../../routes/coordinator";
 import useForm from "../../hooks/useForm"
 import {BASE_URL} from "../../constants/url"
 import axios from "axios";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage"
 
 
-const RegisterPage = () => {
-    
+const RegisterPage = (setBotaoText) => {
+    useUnprotectedPage()
     const history = useHistory()
     const {form, onChange, clear} = useForm({username: "", email: "", password: ""});
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        register(form)
+        register(form, setBotaoText)
     }
 
     const register = () => {
@@ -23,8 +23,9 @@ const RegisterPage = () => {
         .post(`${BASE_URL}/users/signup`, form)
         .then((res) => {
             localStorage.setItem("token", res.data.token)
-            LoginPage(history)
+            FeedPage(history)
             clear()
+            setBotaoText("Logout")
         })
         .catch((err) => {
             alert("Erro no Cadastro", err.response.data.message)
@@ -38,7 +39,7 @@ const RegisterPage = () => {
                 <Titulo>Cadastre-se</Titulo>
                 
                 <ContainerInput>
-                    <form onSubmit={onSubmitForm}>
+                    <form onSubmit={onSubmitForm} setBotaoText={setBotaoText}>
                     <Input1 
                         name={"username"}
                         value={form.username}

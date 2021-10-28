@@ -34,7 +34,6 @@ export const ContainerInput = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-
 `
 
 export const Input1 = styled.input`
@@ -46,6 +45,7 @@ export const Input1 = styled.input`
     border-radius: 10px;
     border-color: #DE2681;
     width: 300px;
+    padding-left: 1.5vw;
 `
     
 export const Input2 = styled.input`
@@ -56,7 +56,8 @@ export const Input2 = styled.input`
     border-radius: 10px;
     border-color: #DE2681;
     width: 300px;
-
+    padding-left: 1.5vw;
+    
 `
 
 export const ContainerBotao = styled.div`
