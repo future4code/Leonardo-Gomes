@@ -28,7 +28,7 @@ const RegisterPage = (setBotaoText) => {
             setBotaoText("Logout")
         })
         .catch((err) => {
-            alert("Erro no Cadastro", err.response.data.message)
+            alert("Erro no Cadastro", err.response.data)
         })
     }
 

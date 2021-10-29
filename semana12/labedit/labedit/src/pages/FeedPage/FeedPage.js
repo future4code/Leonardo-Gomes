@@ -8,28 +8,25 @@ import {LoginPage, PostPage} from "../../routes/coordinator"
 import useProtectedPage from "../../hooks/useProtoctedPage"
 import useRequestData from "../../hooks/useRequestData"
 import {BASE_URL} from "../../constants/url"
+import useForm from "../../hooks/useForm"
 
 
 const FeedPage = (props) => {
     useProtectedPage()
-    const posts = useRequestData([], `${BASE_URL}/posts`)
     const history = useHistory()
+    const posts = useRequestData([], `${BASE_URL}/posts`)
+        
 
-    const onClickCard = (id) => {
-        PostPage(history, id)
+    const onClickCard = (post) => {
+        PostPage(history, post.id)
     };
 
     const postCards = posts.map((post) => {
         return(
             <ContainerPost
                 key={post.id}
+                username={post.username}
                 body={post.body}
-                title={post.title}
-                createdAt={post.createdAt}
-                userId={post.userId}
-                voteSum={null}
-                commentCount={null}
-                userVote={null}
                 onClick={onClickCard}
             />
         )

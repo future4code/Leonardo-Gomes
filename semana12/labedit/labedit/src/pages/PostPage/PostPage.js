@@ -6,12 +6,13 @@ import dislike from "../../img/dislike.png"
 import comments from "../../img/comments.png"
 import { LoginPage, FeedPage } from "../../routes/coordinator";
 import useProtectedPage from "../../hooks/useProtoctedPage"
+import {useParams} from "react-router-dom"
+import useRequestData from "../../hooks/useRequestData"
+import {BASE_URL} from "../../constants/url"
 
 
 const PostPage = () => {
-
     useProtectedPage()
-
     const history = useHistory()
 
     return(
@@ -23,7 +24,7 @@ const PostPage = () => {
                     <Comentarios>Usuario</Comentarios>
                 </ContainerUsuario>
 
-                <PostUsuario type="text" placeholder="Postagem"></PostUsuario>
+                <PostUsuario> postagem </PostUsuario>
 
                 <ContainerCriar>
                     <ComentarioBotao> <img src={like} alt="like" /> </ComentarioBotao>

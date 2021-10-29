@@ -47,8 +47,8 @@ export const ContainerCriar = styled.div`
 export const ContainerPost = styled.div`
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: 450px;
+    width: 100vw;
+    max-width: 500px;
     background-color: white;
 
     margin: 30px;
@@ -57,7 +57,6 @@ export const ContainerPost = styled.div`
     box-shadow: 7px 8px 3px 5px #DE2681;
 
     align-items: center;
-    justify-content: space-around;
 
 `
 
@@ -69,10 +68,12 @@ export const ContainerUsuario = styled.div`
 
 `
 
-export const PostUsuario = styled.input`
+export const PostUsuario = styled.h2`
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 
     width: 300px;
     height: 50px;
@@ -101,6 +102,9 @@ export const BotaoPost = styled.button`
     font-size: large;
     font-weight: 600;
     margin-left: 30px;
+    :hover{
+        background-color: black;
+    }
 `
 
 export const ComentarioBotao = styled.button`

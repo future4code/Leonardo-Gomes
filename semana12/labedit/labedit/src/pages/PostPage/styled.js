@@ -67,7 +67,7 @@ export const ContainerUsuario = styled.div`
 
 `
 
-export const PostUsuario = styled.input`
+export const PostUsuario = styled.h1`
     display: flex;
     flex-direction: row;
     margin-top: 20px;
