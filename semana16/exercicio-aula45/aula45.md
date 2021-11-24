@@ -4,7 +4,7 @@
 ## Exercício 1-a
 
 CREATE TABLE Actor (
-id  VARCHAR(255) PRIMARY KEY, 
+id  VARCHAR(255) PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 salary FLOAT NOT NULL,
 birth_date DATE NOT NULL,
