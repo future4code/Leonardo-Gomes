@@ -15,7 +15,7 @@ app.post('/address/signup', createAddressInfo)
 getAddressInfo("05424150", "10", "casa").then(console.log)
 
 mailTransporter.sendMail({
-    from: "<leo.sgomes61@gmail.com>",
+    from: "<leo.gomes@gmail.com>",
     to: "yuzo.dev.practice@gmail.com",
     subject: "Email de Leonardo Gomes - atividade teste",
     text: "para enviar o email utilizei o mailTransporter",
