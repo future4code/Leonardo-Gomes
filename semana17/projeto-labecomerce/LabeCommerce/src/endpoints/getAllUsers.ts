@@ -7,7 +7,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
         const query = req.query.query || "%"
         const sort = req.query.sort === "name" ? "name" : "id"
 
-        const result = await connection("aula49_exercicio")
+        const result = await connection("labecommerce")
             .select()
             .where("name", "LIKE", `%${query}%`)
             .orWhere("email", "LIKE", `%${query}%`)

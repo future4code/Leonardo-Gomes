@@ -7,7 +7,7 @@ export const getSearchPurchases = async (req: Request, res: Response): Promise<v
         const query = req.query.query || "%"
         const sort = req.query.sort === "name" ? "name" : "id"
 
-        const result = await connection("aula49_exercicio")
+        const result = await connection("labecommerce")
             .select()
             .where("user_id", "LIKE", `%${query}%`)
             .orWhere("product_id", "LIKE", `%${query}%`)

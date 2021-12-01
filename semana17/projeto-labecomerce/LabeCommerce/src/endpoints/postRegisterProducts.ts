@@ -6,7 +6,7 @@ export const postRegisterProducts = async (req: Request, res: Response): Promise
     try {
         const query = req.query.query || "%"
 
-        const result = await connection("aula49_exercicio")
+        const result = await connection("labecommerce")
             .select()
             .where("name", "LIKE", `%${query}%`)
             .orWhere("email", "LIKE", `%${query}%`)
