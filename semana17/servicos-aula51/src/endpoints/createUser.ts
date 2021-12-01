@@ -20,7 +20,7 @@ export default async function createUser(
 
       const newUser: user = { id, name, nickname, email, address }
 
-      await connection('aula51_users').insert(newUser)
+      await connection('exercicio2').insert(newUser)
 
       res.status(201).send("Usuário criado!")
 

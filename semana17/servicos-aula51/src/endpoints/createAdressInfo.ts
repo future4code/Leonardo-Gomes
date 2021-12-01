@@ -17,7 +17,7 @@ export default async function createAddressInfo(
 
         const newAddress: address = { cep, logradouro, numero, complemento, bairro, cidade, estado }
 
-        await connection('aula51_addressInfo').insert(newAddress)
+        await connection('exercicio2').insert(newAddress)
 
         res.status(201).send("Endereço criado!")
 

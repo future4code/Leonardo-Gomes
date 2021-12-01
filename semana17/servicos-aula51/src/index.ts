@@ -9,6 +9,7 @@ import { mailTransporter } from './services/mailTransporter'
 dotenv.config()
 
 app.post("/users/signup", createUser)
+app.post('/address/signup', createAddressInfo)
 
 
 getAddressInfo("05424150", "10", "casa").then(console.log)
