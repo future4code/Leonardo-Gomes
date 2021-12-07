@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
     "start": "tsc && node ./build/index.js",
-    "build": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Labenu",
+  "author": "Leo",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",

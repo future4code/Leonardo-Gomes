@@ -1,100 +1,200 @@
-export enum GENDER {
-  MALE = "MALE",
-  FEMALE = "FEMALE",
-  OTHER = "OTHER"
-}
+// HERANÇA
 
-export interface character {
-  name: string,
-  gender: GENDER,
-  id?: number,
-  description?: string
-}
+// EX1
 
-export class Character implements character{
+export class User {
+  private id: string;
+  private email: string;
+  private name: string;
+  private password: string;
 
   constructor(
-    public name: string,
-    public gender: GENDER,
-    public id?: number,
-    public description?: string
+      id: string,
+      email: string,
+      name: string,
+      password: string
   ) {
-    console.log("Consegui criar " + this.name + " com sucesso!");
+      console.log("Chamando o construtor da classe User")
+      this.id = id
+      this.email = email
+      this.name = name
+      this.password = password
   }
 
-  getName(): string {
-    return this.name;
+
+  public getId(): string {
+      return this.id
   }
 
-  getId(): number | undefined {
-    return this.id;
-  }
-  getGender(): GENDER  {
-    return this.gender;
+  public getEmail(): string {
+      return this.email
   }
 
-  getDescription(): string | undefined {
-    return this.description;
+  public getName(): string {
+      return this.name
   }
+
+  public interoduceYourself(): string {
+    return `Olá, me chamo ${this.name} bom dia!`
+  }
+
 }
 
-const wolverine = new Character("Logan", GENDER.MALE, 11, "Se cura rápido e tem garra de adamantium");
 
-const cyclops: character = {
-  name: "Scott Summers",
-  gender: GENDER.MALE,
-  description: "Solta raio vermelho",
-  id: 10
-}
+// EX2
 
-export class Animal {
-
-  public name: string;
-  public weight: number;
-
-  constructor(name: string, weight: number) {
-    console.log("Construindo um animal...")
-    this.name = name;
-    this.weight = weight;
-    console.log("terminei o animal")
-  }
-
-  eat(quantity: number): void {
-    this.weight += quantity
-  }
-}
-
-export class Dog extends Animal {
-
-  public static nomeCientifico: string = "cannis familiaris"
-
-  bark(): void {
-    console.log("Au au 🐶")
-  }
-}
-
-export class Owl extends Animal {
-
-  public wingspan: number
+export class Customer extends User {
+  public purchaseTotal: number = 0;
+  private creditCard: string;
 
   constructor(
-    owlName: string,
-    owlWeight: number,
-    wingspan: number
+    id: string,
+    email: string,
+    name: string,
+    password: string,
+    creditCard: string
   ) {
-    console.log("Construindo uma coruja...")
-    super(owlName, owlWeight)
-    this.wingspan = wingspan
-    console.log("terminei a coruja")
+    super(id, email, name, password);
+    console.log("Chamando o construtor da classe Customer");
+    this.creditCard = creditCard;
   }
 
-  chirp(): void {
-    console.log("Hoo hoo 🦉")
-  }
-
-  fly(distance: number): void {
-    console.log(`${this.name} voou ${distance} milhas`)
-
-    this.weight -= distance
+  public getCreditCard(): string {
+    return this.creditCard;
   }
 }
+
+// Polimorfismo
+
+// EX1 
+
+export interface Client {
+  name: string
+  registrationNumber: number
+  consumedEnergy: number
+  calculateBill(): number
+}
+
+// EX2
+
+export abstract class Place {
+  constructor(protected cep: string) { }
+
+  public getCep(): string {
+      return this.cep;
+  }
+}
+
+// EX3
+
+
+export class Residence extends Place {
+  constructor(
+      protected residentsQuantity: number,
+      cep: string
+  ) {
+      super(cep);
+  }
+
+  public getResidentsQuantity(): number {
+      return this.residentsQuantity
+  }
+}
+
+export class Commerce extends Place {
+  constructor(
+      protected floorsQuantity: number,
+      cep: string
+  ) {
+      super(cep);
+  }
+
+  public getFloorsQuantity(): number {
+      return this.floorsQuantity
+  }
+}
+
+export class Industry extends Place {
+  constructor(
+      protected machinesQuantity: number,
+      cep: string
+  ) {
+      super(cep);
+  }
+
+  public getMachinesQuantity(): number {
+      return this.machinesQuantity
+  }
+}
+
+
+// EX4
+
+export class ResidentialClient extends Residence implements Client {
+  constructor(
+      private cpf: string,
+      public name: string,
+      public registrationNumber: number,
+      public consumedEnergy: number,
+      residentsQuantity: number,
+      cep: string
+  ) {
+      super(residentsQuantity, cep)
+  }
+
+  public getCpf(): string {
+      return this.cpf;
+  }
+
+  public calculateBill(): number {
+      return this.consumedEnergy * 0.75;
+  }
+}
+
+
+
+// EX5 
+
+export class CommercialClient extends Commerce implements Client {
+  constructor(
+      private cnpj: string,
+      public name: string,
+      public registrationNumber: number,
+      public consumedEnergy: number,
+      floorsQuantity: number,
+      cep: string
+  ) {
+      super(floorsQuantity, cep);
+  }
+
+  public calculateBill(): number {
+      return this.consumedEnergy * 0.53;
+  }
+
+  public getCnpj(): string {
+      return this.cnpj;
+  }
+}
+
+// EX6 
+
+export class IndustrialClient extends Industry implements Client {
+  constructor(
+      private insdustryRegisterNumber: number,
+      public name: string,
+      public registrationNumber: number,
+      public consumedEnergy: number,
+      machinesQuantity: number,
+      cep: string
+  ) {
+      super(machinesQuantity, cep);
+  }
+
+  public getInsdustryRegisterNumber(): number {
+      return this.insdustryRegisterNumber;
+  }
+
+  public calculateBill(): number {
+      return this.consumedEnergy * 0.45 + this.machinesQuantity * 100;
+  }
+} 
