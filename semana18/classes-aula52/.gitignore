@@ -1,8 +1,4 @@
 node_modules
 build
-.vscode
-
 .env
-
-requests.rest
-queries.sql
+package-lock.json
