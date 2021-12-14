@@ -1,30 +1,44 @@
-## Autentificação
+## Autentificando
 
 ### EX1 
 
-*a* Quais propriedades você conseguiu imprimir? Teve alguma que não foi possível? Por que isso aconteceu?
+*a* 
 
-R> Todas as propriedades foram impressas.
+*b* 
+
+*c*
+
+*d*
 
 
 ### EX2
 
-*a* a. Que métodos e propriedades essa classe possui? Por quê?
+*a* 
 
-R> Tem todos os metodos/atributos de herança da classe Residence, Place, Client. 
+*b* 
+
+*c*
+
+*d*
 
 
 ### EX3
 
-*a* Quais as semelhanças dessa classe com a ResidentialClient?
+*a* 
 
-*b* Quais as semelhanças dessa classe com a ResidentialClient?
+*b* 
+
+*c*
+
+*d*
 
 
 ### EX4
 
+*a* 
 
-### EX5
+*b* 
 
+*c*
 
-### EX6
+*d*
