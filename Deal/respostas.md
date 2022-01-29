@@ -1,0 +1,89 @@
+--Exercicio 1
+--SELECT NOME, CPF FROM CLIENTE;
+
+--EXERCICIO 2
+/*SELECT 
+A.NomeFilme 
+,B.NomeCategoria
+FROM FILME AS A
+INNER JOIN CATEGORIA AS B
+ON A.IdCategoria = B.IdCategoria
+WHERE
+B.NomeCategoria = "COMEDIA";
+*/
+
+--EXERCICIO 3
+/*SELECT 
+NomeFilme, ValorDiariaLocacao
+FROM FILME
+WHERE ValorDiariaLocacao < 4
+*/
+
+--EXERCICIO 4
+/*SELECT 
+A.NomeFilme
+,B.NomeCategoria
+FROM FILME AS A
+INNER JOIN CATEGORIA AS B
+ON A A.IdCategoria = B.IdCategoria;
+*/
+
+--EXERCICIO 5
+/*SELECT
+A.CPF
+,A.NOME
+,C.NomeFilme
+.D.NomeCategoria
+FROM CLIENTE AS A
+INNER JOIN LOCACAO B
+	A.CPF = B.cpfCliente
+INNER JOIN FILME AS C
+	B.IdFilme = C.IdFilme
+INNER JOIN CATEGORIA AS D
+	C.IdCategoria = D.IdCategoria;
+*/
+
+--EXERCICIO 6
+/*INSERT INTO 
+CATEGORIA (idCategoria, nomeCategoria)
+VALUES (500, 'TERROR')
+SELECT NomeCategoria
+FROM CATEGORIA;
+*/
+
+--EXERCICIO 7
+/*INSERT INTO FILME
+VALUES (5, "IT - A COISA", 500, 3.99)
+SELECT * FROM FILME;
+*/
+
+--EXERCICIO 8
+/*UPDATE FILME 
+SET NomeFilme = "MANDALORIAN"
+WHERE NomeFilme = "INDIANA JONES";
+SELECT * FROM FILME AS A
+WHERE A.NomeFilme = "MANDALORIAN";
+*/
+
+--EXERCICIO 9 
+/*SELECT NomeFilme
+, COUNT(A.idFilme)
+FROM LOCACAO AS A
+INNER JOIN FILME AS B
+ON A.idFilme = B.idFilme
+GROUP BY (A.idFilme)
+ORDER BY COUNT(A.idFilme) DESC;
+*/
+
+--EXERCICIO 10
+/*SELECT FROM FILME AS F
+WHERE F.IdFilme NOT IN (SELECT LIdFilme from LOCACAO AS L);
+SELECT * FROM LOCACAO WHERE IdFilme = 4;
+*/
+
+--EXERCICIO 11
+/*SELECT cpfCliente, COUNT(idLocacao)
+FROM LOCACAO
+GROUP BY cpfCliente
+HAVING COUNT(cpfCliente) > 1
+*/
