@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import { UserBusiness } from "../business/UserBusiness";
+import { UserInputDTO } from "../model/User";
 
 export class UserController{
 
@@ -6,16 +8,22 @@ export class UserController{
         try {
             const {firstName, lastName, participation} = req.body;
             
-            const user : UserInputDTO = {
+            const input : UserInputDTO = {
                 firstName,
                 lastName,
                 participation
             }
+            
+            const userBusiness = new UserBusiness()
+            const message = await userBusiness.user(input)
 
-            console.log(user)
+            res.status(200).send({message: message})
 
         } catch (error) {
-            
+            if(error instanceof Error){
+            res.status(400).json({message: error.message})
+            } else {
+                res.status(400).send({message: "Unexpected Error!"})            }
         }
     }
 
