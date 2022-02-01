@@ -3,3 +3,7 @@ export interface UserInputDTO {
     lastName: string,
     participation: number
 }
+
+export interface UserInsertDTO extends UserInputDTO {
+    id: string
+}
