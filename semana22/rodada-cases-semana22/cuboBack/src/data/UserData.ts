@@ -1,4 +1,4 @@
-import { UserInsertDTO } from "../model/User";
+import { User, UserInsertDTO } from "../model/User";
 import { BaseDataBase } from "./BaseDataBase";
 
 export class UserData extends BaseDataBase {
@@ -20,12 +20,17 @@ export class UserData extends BaseDataBase {
         }
     }
 
+
     async getAllUser(){
         try {
-            const result = await this.getConnection().select("*")
+            const result: User[] = await this.getConnection().select("*")
             .from(UserData.TABLE_NAME)
+            
+            const users = result.map((user) => {
+                return User.userModel(user)
+            })
 
-            return result
+            return users;
 
         } catch (error) {
             if(error instanceof Error){

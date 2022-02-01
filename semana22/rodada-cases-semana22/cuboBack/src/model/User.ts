@@ -4,11 +4,12 @@ export class User{
         private id: string,
         private firstName: string,
         private lastName: string,
-        private partipation: number
-
+        private participation: number
     ) { }
-
     
+    static userModel(user: User){
+        return new User(user.id, user.firstName, user.lastName, user.participation)
+    }
 }
 
 export interface UserInputDTO {
