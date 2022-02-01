@@ -1,7 +1,7 @@
 import { UserData } from "../data/UserData";
 import { MissingFields } from "../error/MissingFileds";
 import { UserInsertDTO, UserInputDTO } from "../model/User";
-import { IdGenerator } from "../services/idGenerator";
+import { IdGenerator } from "../services/IdGenerator";
 
 export class UserBusiness {
     
@@ -25,4 +25,12 @@ export class UserBusiness {
     
         return result
     } 
+
+    async alluser(){
+
+        const userData = new UserData()
+        const result = await userData.getAllUser()
+    
+        return result
+    }
 }

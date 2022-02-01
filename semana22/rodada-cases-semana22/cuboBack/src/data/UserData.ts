@@ -7,17 +7,26 @@ export class UserData extends BaseDataBase {
 
     async insertUser(user: UserInsertDTO): Promise<string>{
         try {
-
-            const {id, firstName, lastName, participation} = user
-            await this.getConnection().insert({
-                id,
-                firstName,
-                lastName,
-                participation
-            }).into(UserData.TABLE_NAME)
+            await this.getConnection().insert(user).into(UserData.TABLE_NAME)
             
             return "Usuário criado com sucesso"
         
+        } catch (error) {
+            if(error instanceof Error){
+                throw new Error(error.message)
+            } else {
+                throw new Error("Erro do banco!")
+            }
+        }
+    }
+
+    async getAllUser(){
+        try {
+            const result = await this.getConnection().select("*")
+            .from(UserData.TABLE_NAME)
+
+            return result
+
         } catch (error) {
             if(error instanceof Error){
                 throw new Error(error.message)
