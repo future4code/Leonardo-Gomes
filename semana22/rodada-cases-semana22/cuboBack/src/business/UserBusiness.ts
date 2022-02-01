@@ -15,8 +15,11 @@ export class UserBusiness {
             throw new MissingFields()
         }
 
+        const idGenerator = new IdGenerator()
+        const id = idGenerator.generate()
+
         const user: UserInsertDTO = {
-            id: IdGenerator.generete(),
+            id: id,
             ...input
         }
 
