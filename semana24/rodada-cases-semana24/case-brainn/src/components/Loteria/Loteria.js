@@ -1,11 +1,21 @@
 import React from "react";
+import { Logotipo, ImagemLogo, ContainerInfos, TitleLoteria, ContainerGame, TitleConcurso, TitleCodigo } from "./styled";
+import trevo from "../../img/trevo.png"
 
 const Loteria = () => {
     return (
-        <div>
-            <h2>MEGA-SENA</h2>
-            <h3>Código de jogo</h3>
-        </div>
+        <ContainerInfos>
+
+            <Logotipo>
+                <ImagemLogo src={trevo} alt="logo loteria" />
+                <TitleLoteria>MEGA-SENA</TitleLoteria>
+            </Logotipo>
+            
+            <ContainerGame>
+                <TitleConcurso>CONCURSO</TitleConcurso>
+                <TitleCodigo>4513 - 02/02/2022</TitleCodigo>
+            </ContainerGame>
+        </ContainerInfos>
     );
 }
 

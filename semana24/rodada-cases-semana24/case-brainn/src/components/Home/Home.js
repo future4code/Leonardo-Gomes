@@ -4,14 +4,19 @@ import Numeros from "../Numeros/Numeros";
 import Selecao from "../Selecao/Selecao";
 import { ContainerBackground } from "./styled";
 
-const Header = () => {
+const Home = () => {
     return (
         <ContainerBackground>
-            <Selecao/>
-            <Loteria/>
-            <Numeros/>
+            <div>
+                <Selecao/>
+                <Loteria/>
+            </div>
+
+            <div>
+                <Numeros/>
+            </div>
         </ContainerBackground>
     );
 }
 
-export default Header;
+export default Home;
