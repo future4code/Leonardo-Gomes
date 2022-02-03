@@ -1,7 +1,15 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import {LOTERIAS_URL, CONCURSOS_URL, LOTERIAS_CONCURSOS_URL,} from "../../constants/url";
+
 import { ContainerSorteio, Sorteio, ContainerTexto, Descricao, Bola } from "./styled";
 
 const Numeros = () => {
+    
+    
+    
+    
     return (
         <div>
             <ContainerSorteio>
