@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../data/connection";
 
-export const searchSpecificTypes = async(req:Request, res:Response) => {
+export const searchSpecific = async(req:Request, res:Response) => {
     try {
         const {type1, type2} = req.query 
 
