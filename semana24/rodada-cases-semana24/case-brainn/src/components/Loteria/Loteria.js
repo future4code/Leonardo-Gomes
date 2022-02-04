@@ -8,7 +8,7 @@ import trevo from "../../img/trevo.png"
 
 const Loteria = () => {
     
-    
+    axios.get()
     
     
     
