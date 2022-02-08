@@ -1,19 +1,35 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {LOTERIAS_URL, CONCURSOS_URL, LOTERIAS_CONCURSOS_URL,} from "../../constants/url";
+import {BASE_URL} from "../../constants/url";
 
-import { ContainerSorteio, Sorteio, ContainerTexto, Descricao, Bola } from "./styled";
+import { CoreContainer, ContainerSorteio, Sorteio, ContainerTexto, Descricao, Bola } from "./styled";
 
 const Numeros = () => {
     
-    
-    
+    const [sorteioConcurso, setSorteioConcurso]=useState([])
+
+    useEffect(() => {
+        getConcurso()
+    }, [])
+
+    const getConcurso = () => {
+        axios.get(`${BASE_URL}/concursos${sorteioConcurso}`)
+        .then(response => {
+            setSorteioConcurso(response.data)
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
+    const selectConcurso = (e) => {
+        setSorteioConcurso(e.target.value)
+    }
     
     return (
-        <div>
+        <CoreContainer>
             <ContainerSorteio>
-                <Sorteio>
+                <Sorteio value={sorteioConcurso} onChange={selectConcurso}>
                     <Bola>06</Bola>
                     <Bola>09</Bola>
                     <Bola>28</Bola>
@@ -27,7 +43,7 @@ const Numeros = () => {
                 <Descricao>Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</Descricao>
             </ContainerTexto>
             
-        </div>
+        </CoreContainer>
     );
 }
 

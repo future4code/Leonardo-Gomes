@@ -5,8 +5,8 @@ const GlobalState = (props) => {
 
     const [id, setId] = useState([])
 
-    const states = {id}
-    const setters = {setId}
+    const states = {sorteioId}
+    const setters = {setSorteioId}
     
     return (
         <GlobalStateContext.Provider>

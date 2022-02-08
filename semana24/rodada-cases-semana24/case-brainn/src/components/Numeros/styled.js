@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const CoreContainer = styled.div`
+    
+`
+
 export const ContainerSorteio = styled.div`
     display: flex;
     flex-direction: column;
